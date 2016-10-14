@@ -86,19 +86,36 @@ public class Generator {
     
     Generator(){
         generalas();
-        int elso = szamit(kezdoertek);
+        /*int elso = szamit(kezdoertek);
         int masodik = szamit(elso);
         int harmadik = szamit(masodik);
         System.out.println(elso);
         System.out.println(masodik);
         System.out.println(harmadik);
-
+*/
        //szamit(szamit(szamit(66)));
+        for(int i = 0; i<10; i++)
+        {
+            System.out.println(getSorozatElem(i));
+        }
     }
     
     public int getSorozatElem(int elemszam)
     {
-        return 0;
+
+        if (elemszam == 0)
+        {
+            return kezdoertek;
+        }
+        else
+        {
+            int k = kezdoertek;
+            for(int i = 0; i<elemszam; i++)
+            {
+                k = szamit(k);
+            }
+            return k;
+        }
     }
     
     public static void main(String[] args) {
