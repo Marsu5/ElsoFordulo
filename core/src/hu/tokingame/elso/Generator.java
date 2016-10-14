@@ -9,14 +9,16 @@ public class Generator {
        szorzas, kivonas, osszeadas
     }
 
-    int vel(int a, int b) {return (int)(Math.random()*(b-a+1)+a);}
-    int eredmeny=0;
-    Vector<Integer> szamok = new Vector<Integer>(1,1);
-    Vector<Muvelet> muveletek = new Vector<Muvelet>(1,1);
+    private int vel(int a, int b) {return (int)(Math.random()*(b-a+1)+a);}
+
+    private Vector<Integer> szamok = new Vector<Integer>();
+    private Vector<Muvelet> muveletek = new Vector<Muvelet>();
+    private int kezdoertek=0;
+
     
-    
-    void generalas(){
+    private void generalas(){
         int mdb=vel(1,3);
+        kezdoertek = vel(1,9);
         szamok.add(0);
         for (int i = 0; i < mdb; i++) {
             /*int b=vel(1,3);
@@ -32,23 +34,47 @@ public class Generator {
                 case 3: muveletek.add(Muvelet.osszeadas); break;
             }
         }
-        eredmeny=szamok.get(0);
-        System.out.println(eredmeny);
     }
     
     
-    int szamit(int kezdoertek)
+    private int szamit(int kezdoertek)
     {
-        Vector<Muvelet> ujmuvelet = (Vector<Muvelet>)muveletek.clone();
-        Vector<Integer> ujszam = (Vector<Integer>)szamok.clone();
-        ujszam.set(0,kezdoertek);
-        teszt(ujmuvelet, ujszam);
-        
-        
-        return 44;
+        Vector<Muvelet> ujmuveletek = (Vector<Muvelet>)muveletek.clone();
+        Vector<Integer> ujszamok = (Vector<Integer>)szamok.clone();
+        ujszamok.set(0,kezdoertek);
+        teszt(ujmuveletek, ujszamok);
+        int i = 0;
+        while (i<ujmuveletek.size())
+        {
+            if (ujmuveletek.get(i)==Muvelet.szorzas)
+            {
+                ujszamok.set(i, ujszamok.get(i)*ujszamok.get(i+1));
+                ujszamok.remove(i+1);
+                ujmuveletek.remove(i);
+            }
+            else
+            {
+                i++;
+            }
+        }
+        i = 0;
+        while (i<ujmuveletek.size())
+        {
+            if (ujmuveletek.get(i)==Muvelet.osszeadas)
+            {
+                ujszamok.set(i, ujszamok.get(i) + ujszamok.get(i+1));
+            }
+            if (ujmuveletek.get(i)==Muvelet.kivonas)
+            {
+                ujszamok.set(i, ujszamok.get(i) - ujszamok.get(i+1));
+            }
+            ujszamok.remove(i+1);
+            ujmuveletek.remove(i);
+        }
+        return ujszamok.get(0);
     }
     
-    void teszt(Vector<Muvelet> ujmuvelet, Vector<Integer> ujszam )
+    private void teszt(Vector<Muvelet> ujmuvelet, Vector<Integer> ujszam )
     {
         System.out.print(ujszam.get(0));
         for(int i=1; i<ujszam.size(); i++)
@@ -59,8 +85,15 @@ public class Generator {
     }
     
     Generator(){
-       generalas(); 
-        szamit(szamit(szamit(66)));
+        generalas();
+        int elso = szamit(kezdoertek);
+        int masodik = szamit(elso);
+        int harmadik = szamit(masodik);
+        System.out.println(elso);
+        System.out.println(masodik);
+        System.out.println(harmadik);
+
+       //szamit(szamit(szamit(66)));
     }
     
     public int getSorozatElem(int elemszam)
@@ -71,5 +104,5 @@ public class Generator {
     public static void main(String[] args) {
         new Generator();
     }
-    
+
 }
