@@ -1,6 +1,7 @@
 package hu.tokingame.elso;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 
 /**
  * Created by M on 10/14/2016.
@@ -12,6 +13,7 @@ public class GameScreen extends MyScreen {
     public GameScreen(Game game) {
         super(game);
         gameStage = new GameStage(viewport,spriteBatch,game);
+        Gdx.input.setInputProcessor(gameStage);
     }
 
     @Override

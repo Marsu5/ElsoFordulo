@@ -24,5 +24,6 @@ public class GameStage extends MyStage {
     @Override
     protected void init() {
         addActor(new SzamologepActor());
+        setDebugAll(true);
     }
 }
