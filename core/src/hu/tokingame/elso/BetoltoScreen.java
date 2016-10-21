@@ -7,14 +7,14 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
  * Created by M on 10/7/2016.
  */
 
-public class BetoltoKepernyo extends MyScreen {
+public class BetoltoScreen extends MyScreen {
 
     Stage stage;
 
     private float elapsedTime = 0;
     private OneSpriteStaticActor backGround;
 
-    public BetoltoKepernyo(Game game) {
+    public BetoltoScreen(Game game) {
         super(game);
         setBackGroundColor(0f, 0f, 0f);
         stage = new Stage(viewport, spriteBatch);
@@ -45,7 +45,7 @@ public class BetoltoKepernyo extends MyScreen {
 
         if (elapsedTime > 2.0 && Assets.manager.update()) {
             Assets.afterLoaded();
-            game.setScreen(new MenuKepernyo(game));
+            game.setScreen(new MenuScreen(game));
         }
         //spriteBatch.begin();
         elapsedTime += delta;

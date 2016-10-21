@@ -7,7 +7,7 @@ public class MyGdxGame extends Game {
 	@Override
 	public void create () {
 		Assets.prepare();
-		setScreen(new BetoltoKepernyo(this));
+		setScreen(new BetoltoScreen(this));
 	}
 
 	@Override

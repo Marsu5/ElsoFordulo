@@ -7,12 +7,12 @@ import com.badlogic.gdx.Gdx;
  * Created by davim on 2016. 10. 07..
  */
 
-public class MenuKepernyo extends MyScreen {
+public class MenuScreen extends MyScreen {
     protected MenuStage menuStage;
 
 
 
-    public MenuKepernyo(Game game) {
+    public MenuScreen(Game game) {
         super(game);
         menuStage = new MenuStage(viewport, spriteBatch, game);
         Gdx.input.setInputProcessor(menuStage);

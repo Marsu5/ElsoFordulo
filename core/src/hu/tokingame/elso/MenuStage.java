@@ -44,7 +44,7 @@ public class MenuStage extends MyStage {
 
 
 
-        addActor(new MyTextButton("Egyszerü Mód")
+        addActor(new MyTextButton("Egyszerű Mód")
         {
             @Override
             protected void init() {
