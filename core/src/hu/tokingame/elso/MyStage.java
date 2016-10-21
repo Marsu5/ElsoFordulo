@@ -7,7 +7,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 
 /**
- * Created by tuskeb on 2016. 09. 30..
+ * Created by M on 2016. 09. 30..
  */
 abstract public class MyStage extends Stage {
     protected Game game;
