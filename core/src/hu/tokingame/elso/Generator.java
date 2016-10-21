@@ -14,11 +14,17 @@ public class Generator {
     private Vector<Integer> szamok = new Vector<Integer>();
     private Vector<Muvelet> muveletek = new Vector<Muvelet>();
     private int kezdoertek=0;
-
+    private int maxsz = 1;
+    private int minsz = 1;
+    private int maxm = 3;
+    private int minm = 1;
+    private Vector<Integer> SorozatElemek = new Vector<Integer>();
+    private Vector Fuggveny = new Vector();
     
     private void generalas(){
-        int mdb=vel(1,3);
+        int mdb=vel(minm,maxm);
         kezdoertek = vel(1,9);
+        Fuggveny.add(kezdoertek);
         szamok.add(0);
         for (int i = 0; i < mdb; i++) {
             /*int b=vel(1,3);
@@ -26,19 +32,21 @@ public class Generator {
                 int a=szamok.get(i)-szamok.get(1);
                 szamok.set(0, a);
             }*/
-            int szdb = vel(1, 3);
+            int szdb = vel(minsz, maxsz);
             int sz = 0;
             for (int j = 0; j<szdb; j++){
                 sz += vel(1*(int)Math.pow(10, j), 9*(int)Math.pow(10, j));
             }
             szamok.add(sz);
 
+
             switch (vel(1,3))
             {
-                case 1: muveletek.add(Muvelet.szorzas); break;
-                case 2: muveletek.add(Muvelet.kivonas); break;
-                case 3: muveletek.add(Muvelet.osszeadas); break;
+                case 1: muveletek.add(Muvelet.szorzas); Fuggveny.add("*"); break;
+                case 2: muveletek.add(Muvelet.kivonas); Fuggveny.add("-");break;
+                case 3: muveletek.add(Muvelet.osszeadas); Fuggveny.add("+"); break;
             }
+            Fuggveny.add(sz);
         }
     }
     
@@ -100,10 +108,13 @@ public class Generator {
         System.out.println(harmadik);
 */
        //szamit(szamit(szamit(66)));
-        for(int i = 0; i<10; i++)
+        for(int i = 0; i<5; i++)
         {
             System.out.println(getSorozatElem(i));
+            SorozatElemek.add(getSorozatElem(i));
+
         }
+        System.out.println(Fuggveny);
     }
     
     public int getSorozatElem(int elemszam)
@@ -123,9 +134,28 @@ public class Generator {
             return k;
         }
     }
+    public void setMaxsz(int n){
+        this.maxsz= n;
+    }
+    public void setMaxm(int n){
+        this.maxm = n;
+    }
+    public Vector getSorozatElemek(){
+        return SorozatElemek;
+    }
+    public Vector getFuggveny(){
+        return Fuggveny;
+    }
+    public void setMinsz(int n){
+        this.minsz = n;
+    }
+    public void setMinm(int n){
+        this.minm = n;
+    }
     
     public static void main(String[] args) {
         new Generator();
+
     }
 
 }
