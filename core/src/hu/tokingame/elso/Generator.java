@@ -26,7 +26,13 @@ public class Generator {
                 int a=szamok.get(i)-szamok.get(1);
                 szamok.set(0, a);
             }*/
-            szamok.add(vel(1,9));
+            int szdb = vel(1, 3);
+            int sz = 0;
+            for (int j = 0; j<szdb; j++){
+                sz += vel(1*(int)Math.pow(10, j), 9*(int)Math.pow(10, j));
+            }
+            szamok.add(sz);
+
             switch (vel(1,3))
             {
                 case 1: muveletek.add(Muvelet.szorzas); break;
