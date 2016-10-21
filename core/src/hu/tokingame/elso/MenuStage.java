@@ -35,6 +35,10 @@ public class MenuStage extends MyStage {
     public void init(){
         me = this;
 
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENU_BACKGROUDN)));
+
+        me.getActors().get(0).setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
+
         addActor(new MyTextButton("Egyszerü Mód")
         {
             @Override
@@ -65,5 +69,6 @@ public class MenuStage extends MyStage {
                 });
             }
         });
+
     }
 }
