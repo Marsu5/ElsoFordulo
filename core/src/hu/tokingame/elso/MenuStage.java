@@ -10,6 +10,11 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MenuStage extends MyStage {
 
+    private MyTextButton button1;
+    private MyTextButton button2;
+
+
+
     public MenuStage(Viewport viewport, Game game) {
         super(viewport, game);
     }

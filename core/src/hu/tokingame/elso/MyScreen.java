@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 /**
- * Created by tuskeb on 2016. 09. 30..
+ * Created by davim on 2016. 09. 30..
  */
 abstract public class MyScreen implements Screen {
     public final static float WORLD_WIDTH = 1280, WORLD_HEIGHT = 720;
