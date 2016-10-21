@@ -13,7 +13,14 @@ public class Assets {
     public static AssetManager manager;
 
     public static final AssetDescriptor<Texture> MENU_BACKGROUDN = new AssetDescriptor<Texture>("wood.png", Texture.class);
-
+    public static final AssetDescriptor<Texture> CHECKBOX = new AssetDescriptor<Texture>("check.png",Texture.class);
+    public static final AssetDescriptor<Texture> CHECKBOX_CHECKED = new AssetDescriptor<Texture>("checked.png",Texture.class);
+    public static final AssetDescriptor<Texture> SETTINGS_ICON = new AssetDescriptor<Texture>("gear.png", Texture.class);
+    public static final AssetDescriptor<Texture> PLAY_BUTTON = new AssetDescriptor<Texture>("play.png", Texture.class);
+    public static final AssetDescriptor<Texture> MUSIC_ON = new AssetDescriptor<Texture>("sound.png", Texture.class);
+    public static final AssetDescriptor<Texture> MUSIC_OFF = new AssetDescriptor<Texture>("sound-off.png", Texture.class);
+    public static final AssetDescriptor<Texture> LOGO = new AssetDescriptor<Texture>("tokin-logo.png", Texture.class);
+    public static final AssetDescriptor<Texture> MAIN_BACKGROUND = new AssetDescriptor<Texture>("background.png", Texture.class);
 
     public static void prepare() {
         manager = new AssetManager();
