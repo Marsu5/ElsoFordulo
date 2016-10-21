@@ -29,6 +29,14 @@ public class Assets {
 
     public static void load(){
         manager.load(MENU_BACKGROUDN);
+        manager.load(CHECKBOX);
+        manager.load(CHECKBOX_CHECKED);
+        manager.load(SETTINGS_ICON);
+        manager.load(PLAY_BUTTON);
+        manager.load(MUSIC_ON);
+        manager.load(MUSIC_OFF);
+        manager.load(LOGO);
+        manager.load(MAIN_BACKGROUND);
     }
 
     public static void afterLoaded(){
