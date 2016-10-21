@@ -12,6 +12,7 @@ public class Assets {
 
     public static AssetManager manager;
 
+    public static final AssetDescriptor<Texture> MENU_BACKGROUDN = new AssetDescriptor<Texture>("wood.png", Texture.class);
 
 
     public static void prepare() {
@@ -20,7 +21,7 @@ public class Assets {
     }
 
     public static void load(){
-
+        manager.load(MENU_BACKGROUDN);
     }
 
     public static void afterLoaded(){

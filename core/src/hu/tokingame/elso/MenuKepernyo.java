@@ -28,6 +28,7 @@ public class MenuKepernyo extends MyScreen {
     @Override
     public void resize(int width, int height) {
         super.resize(width, height);
+        menuStage.refresh();
     }
 
     @Override

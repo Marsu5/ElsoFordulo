@@ -12,11 +12,15 @@ public class BetoltoKepernyo extends MyScreen {
     Stage stage;
 
     private float elapsedTime = 0;
+    private OneSpriteStaticActor backGround;
 
     public BetoltoKepernyo(Game game) {
         super(game);
         setBackGroundColor(0f, 0f, 0f);
         stage = new Stage(viewport, spriteBatch);
+        stage.addActor(backGround= new OneSpriteStaticActor("wood.png"));
+        backGround.setSize(viewport.getWorldWidth(),viewport.getWorldHeight());
+        backGround.setPosition(0,0);
         stage.addActor(new OneSpriteAnimatedActor("load.txt")
         {
             @Override
