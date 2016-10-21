@@ -15,6 +15,7 @@ public class MenuStage extends MyStage {
 
 
     private MyStage me;
+    private OneSpriteStaticActor backGround;
 
     public MenuStage(Viewport viewport, Game game) {
         super(viewport, game);
@@ -30,14 +31,18 @@ public class MenuStage extends MyStage {
         super(game);
     }
 
+    public void refresh() {
 
+        backGround.setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
+
+    }
 
     public void init(){
         me = this;
 
-        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENU_BACKGROUDN)));
+        addActor(backGround = new OneSpriteStaticActor(Assets.manager.get(Assets.MENU_BACKGROUDN)));
 
-        me.getActors().get(0).setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
+
 
         addActor(new MyTextButton("Egyszerü Mód")
         {
@@ -69,6 +74,6 @@ public class MenuStage extends MyStage {
                 });
             }
         });
-
+        refresh();
     }
 }
