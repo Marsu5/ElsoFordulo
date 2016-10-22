@@ -17,7 +17,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
      * Created by tuskeb on 2016. 09. 30..
      */
     public class MyTextButton extends TextButton{
+        private TextButton button;
         static TextButton.TextButtonStyle textButtonStyle;
+        private TextButton.TextButtonStyle style;
         static
         {
             textButtonStyle = new TextButton.TextButtonStyle();
@@ -43,7 +45,16 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
         }
 
 
-        protected void init()
-        {
+        public void setTexture(Texture texture) {
+            style = new TextButton.TextButtonStyle();
+            style.up = new TextureRegionDrawable(new TextureRegion(texture));
+            style.over = new TextureRegionDrawable(new TextureRegion(texture));
+            style.down = new TextureRegionDrawable(new TextureRegion(texture));
+            style.font = Globals.FONT_HOBO_STD;
+            this.setStyle(style);
+        }
+
+        protected void init() {
+
         }
     }
