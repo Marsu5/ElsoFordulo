@@ -9,6 +9,10 @@ import com.badlogic.gdx.utils.viewport.Viewport;
  */
 
 public class GameStage extends MyStage {
+
+    GameStage stage;
+    private NotepadActor notepadActor;
+
     public GameStage(Game game) {
         super(game);
     }
@@ -23,7 +27,18 @@ public class GameStage extends MyStage {
 
     @Override
     protected void init() {
+        stage = this;
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MAIN_BACKGROUND)){
+            @Override
+            protected void init() {
+                super.init();
+                setPosition(0f,0f);
+                setSize(stage.getViewport().getWorldWidth(),stage.getViewport().getWorldHeight());
+            }
+        });
         addActor(new SzamologepActor());
+        addActor(notepadActor=new NotepadActor());
         setDebugAll(true);
+
     }
 }

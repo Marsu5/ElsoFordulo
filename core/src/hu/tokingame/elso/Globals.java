@@ -3,6 +3,7 @@ package hu.tokingame.elso;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.math.Vector;
 
 /**
  * Created by M on 10/14/2016.
@@ -13,6 +14,7 @@ public class Globals {
     public static final String CHARS = "0123456789öüóqwertzuiopőúasdfghjkléáűíyxcvbnm'+!%/=()ÖÜÓQWERTZUIOPŐÚASDFGHJKLÉÁŰÍYXCVBNM?:_*<>#&@{}[],-.";
     public static final BitmapFont FONT_HOBO_STD;
     public static final BitmapFont FONT_DIGITAL_7;
+    public static java.util.Vector<Integer> sorozat;
 
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("calibril.ttf"));

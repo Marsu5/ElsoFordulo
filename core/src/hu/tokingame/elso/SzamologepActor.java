@@ -178,6 +178,24 @@ public class SzamologepActor extends Group {
                 });
             }
         });
+        addActor(new MyActorInit() {
+            @Override
+            void init() {
+                setPosition(120,360);
+                setSize(80,80);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        if (display.getText().length()!= 0){
+                            display.setText(display.getText().substring(0,display.getText().length()-1));
+                            System.out.println("DEL");
+                        }
+                    }
+
+                });
+            }
+        });
 
 
 
