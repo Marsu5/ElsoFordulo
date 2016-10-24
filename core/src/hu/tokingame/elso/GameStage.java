@@ -2,6 +2,9 @@ package hu.tokingame.elso;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.EventListener;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
@@ -34,6 +37,13 @@ public class GameStage extends MyStage {
                 super.init();
                 setPosition(0f,0f);
                 setSize(stage.getViewport().getWorldWidth(),stage.getViewport().getWorldHeight());
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        System.out.println(x+", "+y);
+                    }
+                });
             }
         });
         addActor(new SzamologepActor());
