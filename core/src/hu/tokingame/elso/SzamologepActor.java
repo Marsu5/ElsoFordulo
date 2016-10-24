@@ -16,30 +16,30 @@ public class SzamologepActor extends Group {
     public SzamologepActor() {
         display=new MyLabel("asd", MyLabel.style2);
 
-        display.setPosition(30,200);
+        display.setPosition(740,550);
 
 
         addActor(display);
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(20,20);
+                setPosition(796,30);
                 setSize(80,80);
                 addListener(new ClickListener(){
-                    @Override
-                    public void clicked(InputEvent event, float x, float y) {
-                        super.clicked(event, x, y);
-                        display.setText(display.getText() + "0");
-                        System.out.println("0");
-                    }
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    super.clicked(event, x, y);
+                    display.setText(display.getText() + "0");
+                    System.out.println("0");
+                }
 
-                });
-            }
-        });
-        addActor(new MyActorInit() {
-            @Override
-            void init() {
-                setPosition(120,20);
+            });
+        }
+    });
+    addActor(new MyActorInit() {
+        @Override
+        void init() {
+            setPosition(738,134);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -55,7 +55,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(240,20);
+                setPosition(900,129);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -70,7 +70,7 @@ public class SzamologepActor extends Group {
         });addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(20,120);
+                setPosition(1100,124);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -86,7 +86,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(120,120);
+                setPosition(736,233);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -102,7 +102,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(240,120);
+                setPosition(900,223);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -118,7 +118,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(20,240);
+                setPosition(1100,224);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -134,7 +134,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(120,240);
+                setPosition(740,322);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -150,7 +150,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(240,240);
+                setPosition(924,321);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
@@ -166,7 +166,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() {
-                setPosition(20,360);
+                setPosition(1100,315);
                 setSize(80,80);
                 addListener(new ClickListener(){
                     @Override
