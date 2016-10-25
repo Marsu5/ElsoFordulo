@@ -24,5 +24,6 @@ public class NotepadActor extends Group {
             addActor(myLabel = new MyLabel("asd",MyLabel.style));
             notepadActors.add(myLabel);
         }
+        notepadActors.get()
     }
 }
