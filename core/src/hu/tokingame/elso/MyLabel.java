@@ -14,6 +14,7 @@ public class MyLabel extends Label {
     float elapsedtime =0;
     public static com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle style;
     public static com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle style2;
+    public static com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle style3;
 
     static {
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
@@ -25,6 +26,9 @@ public class MyLabel extends Label {
         style2.font = Globals.FONT_DIGITAL_7;
         style2.fontColor = Color.WHITE;
 
+        style3 = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
+        style3.font = Globals.FONT_HOBO_STD;
+        style3.fontColor = Color.BLACK;
     }
 
     public MyLabel(String text) {

@@ -125,30 +125,30 @@ public class Generator {
             return k;
         }
     }
-    public static Vector getSorozatElemek(){
+    public static Vector<Integer> getSorozatElemek(){
         return SorozatElemek;
-    }
+    } // kiadja vektorban a legenerált sorozat végeredményeit
     public static Vector getFuggveny(){
         return Fuggveny;
-    }
+    } // kiadja vektorban a függvényt
     public static void setMaxSz(int n){
         Generator.maxSz = n;
-    }
+    } // beállítja a maximálisan használható számok méretét (tizedes helyiérték)
     public static void setMaxM(int n){
         Generator.maxM = n;
-    }
+    } // max műveletek száma
     public static void setMinSz(int n){
         Generator.minSz = n;
-    }
+    } //beállítja a maximálisan használható számok méretét (tizedes helyiérték)
     public static void setMinM(int n){
         Generator.minM = n;
-    }
+    } // min műveletek száma
     public static int getMaxM() {
         return maxM;
-    }
+    } // visszadja a max műveletek számát
     public static int getMaxSz() {
         return maxSz;
-    }
+    } // ugyanaz számokkal
     public static int getMinM() {
         return minM;
     }
@@ -158,11 +158,11 @@ public class Generator {
 
     public static int getElemSzam() {
         return elemSzam;
-    }
+    } // visszaadja mennyi végeredméynt generáljon
 
     public static void setElemSzam(int elemSzam) {
         Generator.elemSzam = elemSzam;
-    }
+    } // beállítja mennyi végeredményt csináljon
 
     public static void reset(){
         maxSz = 1;

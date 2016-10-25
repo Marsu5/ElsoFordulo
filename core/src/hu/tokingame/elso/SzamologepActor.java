@@ -6,14 +6,15 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.util.Vector;
+
 /**
  * Created by davim on 2016. 10. 21..
  */
 
 public class SzamologepActor extends Group {
     public MyLabel display;
-
-    public SzamologepActor() {
+    {
         display=new MyLabel("", MyLabel.style2);
 
         display.setPosition(740,550);
@@ -22,7 +23,7 @@ public class SzamologepActor extends Group {
         addActor(display);
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // kijelző actora
                 setPosition(730,30);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -38,7 +39,7 @@ public class SzamologepActor extends Group {
     });
     addActor(new MyActorInit() {
         @Override
-        void init() {
+        void init() { // 1-es gomb
             setPosition(738,134);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -54,7 +55,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 2-es gomb
                 setPosition(900,129);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -69,7 +70,7 @@ public class SzamologepActor extends Group {
             }
         });addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 3-es gomb
                 setPosition(1059,124);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -85,7 +86,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 4-es gomb
                 setPosition(736,233);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -101,7 +102,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 5-es gomb
                 setPosition(900,223);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -117,7 +118,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 6-es gomb
                 setPosition(1059,224);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -133,7 +134,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 7-es gomb
                 setPosition(740,322);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -149,7 +150,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 8-es gomb
                 setPosition(900,321);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -165,7 +166,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // 9-es gomb
                 setPosition(1059,315);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -181,7 +182,7 @@ public class SzamologepActor extends Group {
         });
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // törlés gomb
                 setPosition(1059,430);
                 setSize(110,60);
                 addListener(new ClickListener(){
@@ -199,8 +200,39 @@ public class SzamologepActor extends Group {
         });
 
 
+        addActor(new MyActorInit() {
+            @Override
+            void init() {
+                setPosition(890, 32);
+                setSize(290, 80);
+                addListener(new ClickListener(){
+                   public void clicked(InputEvent event, float x, float y){
+                       super.clicked(event, x, y);
+                       if(display.getText().length() > 0){
+                           try{
+                               int a = Integer.parseInt(display.getText().toString());
+                               osszevet(a);
+                           }catch (Exception e){
+                               System.out.println("huehue");
+                           }
+                       }
+                   }
+                });
+            }
+        });
 
     }
 
+
+    public void osszevet(int bevitt){
+
+        int u = Generator.getSorozatElemek().get(5);
+        if(bevitt == u){
+            display.setText("PORFIKT");
+        }
+        else{
+            display.setText("NEM");
+        }
+    }
 
 }
