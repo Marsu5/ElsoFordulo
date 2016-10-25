@@ -18,9 +18,9 @@ public class NotepadActor extends Group {
     public Vector<MyLabel> notepadActors;
 
     public NotepadActor() {
-        MyLabel myLabel;
         notepadActors = new Vector<MyLabel>();
         for (int i = 0; i < 6; i++){
+            MyLabel myLabel;
             addActor(myLabel = new MyLabel("asd",MyLabel.style));
             notepadActors.add(myLabel);
         }
