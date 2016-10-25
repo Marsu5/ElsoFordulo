@@ -24,6 +24,6 @@ public class NotepadActor extends Group {
             addActor(myLabel = new MyLabel("asd",MyLabel.style));
             notepadActors.add(myLabel);
         }
-        notepadActors.get()
+        notepadActors.get(0).setPosition(0, MyScreen.WORLD_HEIGHT-notepadActors.get(0).getHeight()-20);
     }
 }
