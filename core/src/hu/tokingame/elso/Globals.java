@@ -16,6 +16,7 @@ public class Globals {
     public static final BitmapFont FONT_HOBO_STD;
     public static final BitmapFont FONT_DIGITAL_7;
     public static java.util.Vector<Integer> sorozat;
+    public static boolean zeneKelle = true;
 
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("calibril.ttf"));

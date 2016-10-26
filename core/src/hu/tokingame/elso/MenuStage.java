@@ -105,9 +105,23 @@ public class MenuStage extends MyStage {
             @Override
             protected void init() {
                 debug();
-                setTexture(Assets.manager.get(Assets.MUSIC_ON));
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(me.getWidth()-this.getWidth(),settingsButton.getHeight());
+                setTexture(Assets.manager.get(Assets.MUSIC_ON));
+
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        Globals.zeneKelle = !Globals.zeneKelle;
+                        if (Globals.zeneKelle){
+                            setTexture(Assets.manager.get(Assets.MUSIC_ON));
+                        }else{
+                            setTexture(Assets.manager.get(Assets.MUSIC_OFF));
+                        }
+                    }
+                });
+
             }
         });
 

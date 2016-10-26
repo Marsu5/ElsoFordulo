@@ -14,6 +14,8 @@ import java.util.Vector;
 
 public class SzamologepActor extends Group {
     public MyLabel display;
+    private String jo = "PORFIKT";
+    private String rosz = "NEM";
     {
         display=new MyLabel("", MyLabel.style2);
 
@@ -190,7 +192,8 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if (display.getText().length()!= 0){
-                            display.setText(display.getText().substring(0,display.getText().length()-1));
+                            if(display.getText().toString().equals(rosz)) display.setText("");
+                            else display.setText(display.getText().substring(0,display.getText().length()-1));
                             System.out.println("DEL");
                         }
                     }
@@ -198,11 +201,9 @@ public class SzamologepActor extends Group {
                 });
             }
         });
-
-
         addActor(new MyActorInit() {
             @Override
-            void init() {
+            void init() { // egyenlőség jel gomb
                 setPosition(890, 32);
                 setSize(290, 80);
                 addListener(new ClickListener(){
@@ -220,7 +221,6 @@ public class SzamologepActor extends Group {
                 });
             }
         });
-
     }
 
 
@@ -228,10 +228,10 @@ public class SzamologepActor extends Group {
 
         int u = Generator.getSorozatElemek().get(5);
         if(bevitt == u){
-            display.setText("PORFIKT");
+            display.setText(jo);
         }
         else{
-            display.setText("NEM");
+            display.setText(rosz);
         }
     }
 
