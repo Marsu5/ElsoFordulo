@@ -23,10 +23,10 @@ public class SzamologepActor extends Group {
         display.setPosition(740,550);
 
 
-        addActor(display);
+        addActor(display);// kijelzo aktora
         addActor(new MyActorInit() {
             @Override
-            void init() { // kijelző actora
+            void init() { // 0-as gomb
                 setPosition(730,30);
                 setSize(120,70);
                 addListener(new ClickListener(){
@@ -222,6 +222,32 @@ public class SzamologepActor extends Group {
                 });
             }
         });
+        addActor(new MyActorInit() {
+            @Override
+            void init() { // + - váltó gomb
+                setPosition(600,30);
+                setSize(110,60);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        if (display.getText().length() != 0){
+                            if (display.getText().charAt(0)=='-'){
+                                display.setText(display.getText().substring(1,display.getText().length()));
+                            }else{
+                                display.setText("-"+display.getText());
+                            }
+                        }
+
+                    }
+
+                });
+            }
+        });
+
+
+
+
 
         /* Ez az FX gomb lesz ami majd megnyit egy dialog-ot
         addActor(new MyActorInit() {
