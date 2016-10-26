@@ -2,7 +2,13 @@ package hu.tokingame.elso;
 
 import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.FileHandleResolver;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader;
+import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 /**
@@ -12,6 +18,27 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 public class Assets {
 
     public static AssetManager manager;
+
+    static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
+    static {
+        fontParameter.fontFileName = "calibril.ttf";
+        fontParameter.fontParameters.size = 35;
+        fontParameter.fontParameters.characters = Globals.CHARS;
+    }
+
+    public static final AssetDescriptor<BitmapFont> CALIBRIL_FONT
+            = new AssetDescriptor<BitmapFont>("calibril.ttf", BitmapFont.class, fontParameter);
+
+    static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter2 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
+    static {
+        fontParameter2.fontFileName = "digital-7.ttf";
+        fontParameter2.fontParameters.size = 35;
+        fontParameter2.fontParameters.characters = Globals.CHARS;
+    }
+
+    public static final AssetDescriptor<BitmapFont> DIGITAL_7_FONT
+            = new AssetDescriptor<BitmapFont>("digital-7.ttf", BitmapFont.class, fontParameter2);
+
 
     public static final AssetDescriptor<Texture> MENU_BACKGROUDN = new AssetDescriptor<Texture>("wood.png", Texture.class);
     public static final AssetDescriptor<Texture> CHECKBOX = new AssetDescriptor<Texture>("check.png",Texture.class);
@@ -38,6 +65,15 @@ public class Assets {
         manager.load(MUSIC_OFF);
         manager.load(LOGO);
         manager.load(MAIN_BACKGROUND);
+
+        FileHandleResolver resolver = new InternalFileHandleResolver();
+        manager.setLoader(FreeTypeFontGenerator.class, new FreeTypeFontGeneratorLoader(resolver));
+        manager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
+        manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
+
+        manager.load(CALIBRIL_FONT);
+        manager.load(DIGITAL_7_FONT);
+
     }
 
     public static void afterLoaded(){

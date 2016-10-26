@@ -18,16 +18,20 @@ public class MyLabel extends Label {
 
     static {
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
-        style.font = Globals.FONT_HOBO_STD;
+        style.font = Assets.manager.get(Assets.CALIBRIL_FONT);
+
+        ;
         style.fontColor = Color.WHITE;
 
 
         style2 = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
-        style2.font = Globals.FONT_DIGITAL_7;
+        style2.font = Assets.manager.get(Assets.DIGITAL_7_FONT);
+
+
         style2.fontColor = Color.WHITE;
 
         style3 = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
-        style3.font = Globals.FONT_HOBO_STD;
+        style3.font = Assets.manager.get(Assets.CALIBRIL_FONT);
         style3.fontColor = Color.BLACK;
     }
 
