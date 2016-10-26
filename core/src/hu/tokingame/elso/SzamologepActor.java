@@ -14,6 +14,7 @@ import java.util.Vector;
 
 public class SzamologepActor extends Group {
     public MyLabel display;
+    private MyDialog dialog;
     private String jo = "PORFIKT";
     private String rosz = "NEM";
     {
@@ -221,6 +222,28 @@ public class SzamologepActor extends Group {
                 });
             }
         });
+
+        /* Ez az FX gomb lesz ami majd megnyit egy dialog-ot
+        addActor(new MyActorInit() {
+            @Override
+            void init() { // fx gomb
+                setPosition(0, 0);
+                setSize(290, 80);
+                addListener(new ClickListener(){
+                    public void clicked(InputEvent event, float x, float y){
+                        super.clicked(event, x, y);
+                        String s = Generator.getFuggveny().toString();
+                        addActor(dialog = new MyDialog("Fugveny"));
+                        dialog.setPosition(MyScreen.WORLD_WIDTH/2f-dialog.getWidth()/2f,MyScreen.WORLD_HEIGHT/2f-dialog.getHeight()/2f);
+                        dialog.setTexture(Assets.manager.get(Assets.MENU_BACKGROUDN));
+
+                    }
+                });
+            }
+        });
+
+        */
+
     }
 
 

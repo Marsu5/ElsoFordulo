@@ -23,7 +23,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
         static
         {
             textButtonStyle = new TextButton.TextButtonStyle();
-            textButtonStyle.font = Globals.FONT_HOBO_STD;
+            textButtonStyle.font = Assets.manager.get(Assets.CALIBRIL_FONT);
 
             Pixmap p = new Pixmap(1,1, Pixmap.Format.RGB888);
             p.setColor(0.1f,0.2f,0.2f, 0.5f);
@@ -50,7 +50,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
             style.up = new TextureRegionDrawable(new TextureRegion(texture));
             style.over = new TextureRegionDrawable(new TextureRegion(texture));
             style.down = new TextureRegionDrawable(new TextureRegion(texture));
-            style.font = Globals.FONT_HOBO_STD;
+            style.font = Assets.manager.get(Assets.CALIBRIL_FONT);
             this.setStyle(style);
         }
 

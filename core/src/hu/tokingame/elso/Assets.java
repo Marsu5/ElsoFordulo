@@ -22,7 +22,7 @@ public class Assets {
     static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
     static {
         fontParameter.fontFileName = "calibril.ttf";
-        fontParameter.fontParameters.size = 35;
+        fontParameter.fontParameters.size = 50;
         fontParameter.fontParameters.characters = Globals.CHARS;
     }
 
@@ -32,7 +32,7 @@ public class Assets {
     static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter2 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
     static {
         fontParameter2.fontFileName = "digital-7.ttf";
-        fontParameter2.fontParameters.size = 35;
+        fontParameter2.fontParameters.size = 50;
         fontParameter2.fontParameters.characters = Globals.CHARS;
     }
 

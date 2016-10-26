@@ -27,7 +27,7 @@ public class NotepadActor extends Group {
             addActor(myLabel = new MyLabel("asd",MyLabel.style3));
             notepadActors.add(myLabel);
         }
-        notepadActors.get(0).setPosition(100, 615);
+        notepadActors.get(0).setPosition(100, 610);
         notepadActors.get(0).setText(sorozat.get(0)+"");
         notepadActors.get(1).setPosition(100, 550);
         notepadActors.get(1).setText(sorozat.get(1)+"");
