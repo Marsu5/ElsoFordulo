@@ -17,8 +17,10 @@ public class SzamologepActor extends Group {
     public MyLabel display;
     private MyLabel fx;
     private SzamologepActor szamologepActor;
-    private java.lang.String jo = "PORFIKT";
-    private java.lang.String rosz = "NEM";
+    private java.lang.String jo = "HELYES"; //amit kiír ha helyes a válasz
+    private java.lang.String rosz = "ERROR"; // ha rossz
+    private int maxhibak = 5; // hányszor hibázhat
+    private int hibak = 0; // hányszor hibázott
 
     public SzamologepActor()
     {
@@ -31,7 +33,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "0");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "0");
                         System.out.println("0");
                     }
 
@@ -47,7 +49,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "1");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "1");
                         System.out.println("1");
                     }
 
@@ -63,7 +65,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "2");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "2");
                         System.out.println("2");
                     }
 
@@ -78,7 +80,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "3");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "3");
                         System.out.println("3");
                     }
 
@@ -94,7 +96,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "4");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "4");
                         System.out.println("4");
                     }
 
@@ -110,7 +112,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "5");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "5");
                         System.out.println("5");
                     }
 
@@ -126,7 +128,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "6");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "6");
                         System.out.println("6");
                     }
 
@@ -142,7 +144,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "7");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "7");
                         System.out.println("7");
                     }
 
@@ -158,7 +160,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "8");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "8");
                         System.out.println("8");
                     }
 
@@ -174,7 +176,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(display.getText() + "9");
+                        if(!(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "9");
                         System.out.println("9");
                     }
 
@@ -191,7 +193,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if (display.getText().length()!= 0){
-                            if(display.getText().toString().equals(rosz)) display.setText("");
+                            if(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString())) display.setText("");
                             else display.setText(display.getText().substring(0,display.getText().length()-1));
                             System.out.println("DEL");
                         }
@@ -254,9 +256,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        szamologepActor.addActor (fx = new MyLabel(kepletString(),MyLabel.style3));
-
-                        fx.setPosition(100, 23);
+                        display.setText(kepletString().toString().toString().toString().toString()); // vicces
                         System.out.println("FX");
                     }
 
@@ -271,7 +271,7 @@ public class SzamologepActor extends Group {
         display.setFontScale(2);
         display.setColor(0,0,0,1);
         display.debug();
-        addActor(display);// kijelzo aktora
+        addActor(display);// számológép kijelző aktora
 
 
         setSize(1280, 720);
@@ -292,12 +292,15 @@ public class SzamologepActor extends Group {
 
     public void osszevet(int bevitt){
 
-        int u = Generator.getSorozatElemek().get(5);
+        long u = Generator.getSorozatElemek().get(5);
         if(bevitt == u){
             display.setText(jo);
         }
         else{
             display.setText(rosz);
+            hibak++;
+            NotepadActor.setHibaszaml(hibak +"/"+ maxhibak);
+            if(hibak == maxhibak) System.out.println("Elfogyott a lehetőség"); // IDE MÉG KELL VALAMI HA ELFOGY A LEHETŐSÉG AKKOR CSINÁLJON MONDJUK SYSTEM.EXIT(0) XD HUEHUE
         }
     }
 

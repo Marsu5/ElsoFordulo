@@ -10,7 +10,7 @@ public class Generator {
 
     private static int vel(int a, int b) {return (int)(Math.random()*(b-a+1)+a);}
 
-    private static Vector<Integer> szamok = new Vector<Integer>();
+    private static Vector<Long> szamok = new Vector<Long>();
     private static Vector<Muvelet> muveletek = new Vector<Muvelet>();
     private static int kezdoertek=0;
     private static int maxSz = 1;
@@ -18,14 +18,14 @@ public class Generator {
     private static int maxM = 3;
     private static int minM = 1;
     private static int elemSzam = 6;
-    private static Vector<Integer> SorozatElemek = new Vector<Integer>();
+    private static Vector<Long> SorozatElemek = new Vector<Long>();
     private static Vector Fuggveny = new Vector();
 
     private static void generalas(){
         int mdb=vel(minM, maxM);
         kezdoertek = vel(1,9);
         Fuggveny.add(kezdoertek);
-        szamok.add(0);
+        szamok.add((long)0);
         for (int i = 0; i < mdb; i++) {
             /*int b=vel(1,3);
             if (muveletek.get(i) == Muvelet.kivonas){
@@ -33,7 +33,7 @@ public class Generator {
                 szamok.set(0, a);
             }*/
             int szdb = vel(minSz, maxSz);
-            int sz = 0;
+            long sz = 0;
             for (int j = 0; j<szdb; j++){
                 sz += vel(1*(int)Math.pow(10, j), 9*(int)Math.pow(10, j));
             }
@@ -51,9 +51,9 @@ public class Generator {
     }
     
     
-    private static int szamit(int kezdoertek) {
+    private static long szamit(long kezdoertek) {
         Vector<Muvelet> ujmuveletek = (Vector<Muvelet>)muveletek.clone();
-        Vector<Integer> ujszamok = (Vector<Integer>)szamok.clone();
+        Vector<Long> ujszamok = (Vector<Long>)szamok.clone();
         ujszamok.set(0,kezdoertek);
         teszt(ujmuveletek, ujszamok);
         int i = 0;
@@ -83,7 +83,7 @@ public class Generator {
         return ujszamok.get(0);
     }
     
-    private static void teszt(Vector<Muvelet> ujmuvelet, Vector<Integer> ujszam )
+    private static void teszt(Vector<Muvelet> ujmuvelet, Vector<Long> ujszam )
     {
         System.out.print(ujszam.get(0));
         for(int i=1; i<ujszam.size(); i++)
@@ -109,7 +109,7 @@ public class Generator {
     }
 
     
-    public static int getSorozatElem(int elemszam) {
+    public static long getSorozatElem(int elemszam) {
 
         if (elemszam == 0)
         {
@@ -117,7 +117,7 @@ public class Generator {
         }
         else
         {
-            int k = kezdoertek;
+            long k = kezdoertek;
             for(int i = 0; i<elemszam; i++)
             {
                 k = szamit(k);
@@ -125,7 +125,7 @@ public class Generator {
             return k;
         }
     }
-    public static Vector<Integer> getSorozatElemek(){
+    public static Vector<Long> getSorozatElemek(){
         return SorozatElemek;
     } // kiadja vektorban a legenerált sorozat végeredményeit
     public static Vector getFuggveny(){

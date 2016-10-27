@@ -17,6 +17,7 @@ public class NotepadActor extends Group {
     public NotepadActor notepadActor;
     public Vector<MyLabel> notepadActors;
     public Vector sorozat;
+    private static MyLabel hibaszaml;
 
     public NotepadActor() {
         generate();
@@ -41,8 +42,12 @@ public class NotepadActor extends Group {
         notepadActors.get(5).setText("?");
 
         setSize(1280, 720);
+
+        hibaszaml = new MyLabel("0/5", MyLabel.style3);
+        addActor(hibaszaml);
     }
     public void generate(){
         Generator.Generat();
     }
+    public static void setHibaszaml(String s){hibaszaml.setText(s);}
 }

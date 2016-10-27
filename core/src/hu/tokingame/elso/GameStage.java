@@ -51,7 +51,9 @@ public class GameStage extends MyStage {
         notepadActor.setPosition(0,0);
 
         SzamologepActor szamologepActor;
-        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
+        addActor(szamologepActor = new SzamologepActor(){
+
+        });// szamolo gep gombok.
         szamologepActor.setPosition(0,0);
 
         addActor(new MyActorInit() {
@@ -62,6 +64,7 @@ public class GameStage extends MyStage {
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
+
                         super.clicked(event, x, y);
                         game.setScreen(new GameScreen(game));
                     }
