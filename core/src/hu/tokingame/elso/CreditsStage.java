@@ -1,6 +1,8 @@
 package hu.tokingame.elso;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -16,17 +18,28 @@ public class CreditsStage extends MyStage {
 
     public CreditsStage(Viewport viewport, Batch batch, Game game) {
         super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
         init();
     }
 
     public CreditsStage(Viewport viewport, Game game) {
         super(viewport, game);
+        Gdx.input.setCatchBackKey(true);
         init();
     }
 
     public CreditsStage(Game game) {
         super(game);
+        Gdx.input.setCatchBackKey(true);
         init();
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.BACK){
+            game.setScreen(new MenuScreen(game));
+        }
+        return false;
     }
 
     @Override

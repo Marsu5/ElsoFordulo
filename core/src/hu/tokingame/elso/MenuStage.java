@@ -32,7 +32,7 @@ public class MenuStage extends MyStage {
     public MenuStage(Viewport viewport, Batch batch, Game game) {
 
         super(viewport, batch, game);
-        Gdx.input.setCatchBackKey(false);
+        Gdx.input.setCatchBackKey(true);
     }
 
 
@@ -40,6 +40,13 @@ public class MenuStage extends MyStage {
 
         backGround.setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
 
+    }
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.BACK){
+            System.exit(0);
+        }
+        return false;
     }
 
 
