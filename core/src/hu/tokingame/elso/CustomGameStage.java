@@ -69,6 +69,6 @@ public class CustomGameStage extends MyStage {
 
 
 
-        setDebugAll(true);
+        setDebugAll(false);
     }
 }

@@ -32,7 +32,7 @@ public class MenuStage extends MyStage {
     public MenuStage(Viewport viewport, Batch batch, Game game) {
 
         super(viewport, batch, game);
-        Gdx.input.setCatchBackKey(false);
+        Gdx.input.setCatchBackKey(true);
     }
 
 
@@ -40,6 +40,13 @@ public class MenuStage extends MyStage {
         backGround.setPosition(0,0);
         //backGround.setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
         backGround.setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+    }
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.BACK){
+            System.exit(0);
+        }
+        return false;
     }
 
 
@@ -77,7 +84,7 @@ public class MenuStage extends MyStage {
         addActor(settingsButton = new MyTextButton(""){
             @Override
             protected void init() {
-                debug();
+                //debug();
                 setTexture(Assets.manager.get(Assets.SETTINGS_ICON));
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(MyScreen.WORLD_WIDTH-this.getWidth(),0);
@@ -91,10 +98,25 @@ public class MenuStage extends MyStage {
             }
         });
 
+        addActor(new MyTextButton("Credits"){
+            @Override
+            protected void init() {
+                super.init();
+                setPosition(0,0);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        game.setScreen(new CreditsScreen(game));
+                    }
+                });
+            }
+        });
+
         addActor(musicButton = new MyTextButton(""){
             @Override
             protected void init() {
-                debug();
+                //debug();
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(MyScreen.WORLD_WIDTH-this.getWidth(),settingsButton.getHeight());
                 if(Globals.zeneKelle){
