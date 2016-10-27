@@ -16,4 +16,22 @@ public class SettingsScreen extends MyScreen {
         settingsStage = new SettingsStage(viewport, spriteBatch, game);
         Gdx.input.setInputProcessor(settingsStage);
     }
+
+    @Override
+    public void render(float delta) {
+        super.render(delta);
+        settingsStage.act(delta);
+        settingsStage.draw();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        super.resize(width, height);
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        settingsStage.dispose();
+    }
 }
