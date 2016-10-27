@@ -19,13 +19,9 @@ public class SzamologepActor extends Group {
     private SzamologepActor szamologepActor;
     private java.lang.String jo = "PORFIKT";
     private java.lang.String rosz = "NEM";
+
+    public SzamologepActor()
     {
-        display=new MyLabel("", MyLabel.style2);
-
-        display.setPosition(740,550);
-
-
-        addActor(display);// kijelzo aktora
         addActor(new MyActorInit() {
             @Override
             void init() { // 0-as gomb
@@ -266,7 +262,17 @@ public class SzamologepActor extends Group {
             }
         });
 
+        display=new MyLabel("", MyLabel.style2);
 
+        display.setPosition(740,510);
+        display.setSize(400,100);
+        display.setFontScale(2);
+        display.setColor(0,0,0,1);
+        display.debug();
+        addActor(display);// kijelzo aktora
+
+
+        setSize(1280, 720);
 
 
     }
