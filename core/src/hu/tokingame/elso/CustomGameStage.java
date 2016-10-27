@@ -45,6 +45,11 @@ public class CustomGameStage extends MyStage {
                 });
             }
         });
+
+        SzamologepActor szamologepActor;
+        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
+        szamologepActor.setPosition(0,0);
+
         addActor(customNotepadActor = new CustomNotepadActor());// jegyzettomb sorok
         customNotepadActor.setPosition(0,0);
         addActor(new MyActorInit() {
@@ -56,15 +61,13 @@ public class CustomGameStage extends MyStage {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        game.setScreen(new GameScreen(game));
+                        game.setScreen(new CustomGameScreen(game));
                     }
                 });
             }
         });
 
-        SzamologepActor szamologepActor;
-        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
-        szamologepActor.setPosition(0,0);
+
 
         setDebugAll(true);
     }

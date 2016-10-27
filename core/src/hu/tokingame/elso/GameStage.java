@@ -49,6 +49,11 @@ public class GameStage extends MyStage {
         });
         addActor(notepadActor=new NotepadActor());// jegyzettomb sorok
         notepadActor.setPosition(0,0);
+
+        SzamologepActor szamologepActor;
+        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
+        szamologepActor.setPosition(0,0);
+
         addActor(new MyActorInit() {
             @Override
             void init() { // uj játék gomb
@@ -63,11 +68,6 @@ public class GameStage extends MyStage {
                 });
             }
         });
-
-
-        SzamologepActor szamologepActor;
-        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
-        szamologepActor.setPosition(0,0);
 
 
         setDebugAll(true);
