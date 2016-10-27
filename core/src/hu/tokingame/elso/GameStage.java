@@ -46,8 +46,22 @@ public class GameStage extends MyStage {
                 });
             }
         });
-        addActor(new SzamologepActor());
-        addActor(notepadActor=new NotepadActor());
+        addActor(new SzamologepActor());// szamolo gep gombok.
+        addActor(notepadActor=new NotepadActor());// jegyzettomb sorok
+        addActor(new MyActorInit() {
+            @Override
+            void init() { // uj játék gomb
+                this.setPosition(0,0);
+                this.setSize(100,100);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        game.setScreen(new GameScreen(game));
+                    }
+                });
+            }
+        });
         setDebugAll(true);
 
     }

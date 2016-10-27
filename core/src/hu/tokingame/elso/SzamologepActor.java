@@ -257,6 +257,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         szamologepActor.addActor (fx = new MyLabel(kepletString(),MyLabel.style3));
+
                         fx.setPosition(100, 23);
                         System.out.println("FX");
                     }
