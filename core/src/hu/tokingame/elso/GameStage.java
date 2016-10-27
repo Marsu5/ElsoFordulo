@@ -1,6 +1,8 @@
 package hu.tokingame.elso;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -16,21 +18,28 @@ public class GameStage extends MyStage {
     GameStage stage;
     private NotepadActor notepadActor;
 
-    public GameStage(Game game) {
-        super(game);
-    }
+
 
     public GameStage(Viewport viewport, Batch batch, Game game) {
         super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
     }
 
-    public GameStage(Viewport viewport, Game game) {
-        super(viewport, game);
+
+
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.BACK){
+            game.setScreen(new MenuScreen(game));
+        }
+        return false;
     }
 
     @Override
     protected void init() {
         stage = this;
+        Gdx.input.setCatchBackKey(true);
         addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MAIN_BACKGROUND)){
             @Override
             protected void init() {
