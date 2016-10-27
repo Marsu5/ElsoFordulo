@@ -19,7 +19,7 @@ public class CustomGameScreen extends MyScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
-        customGameStage.act();
+        customGameStage.act(delta);
         customGameStage.draw();
     }
 }

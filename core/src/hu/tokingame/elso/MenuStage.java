@@ -1,6 +1,8 @@
 package hu.tokingame.elso;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -27,25 +29,19 @@ public class MenuStage extends MyStage {
     private TextButton musicButton;
 
 
-    public MenuStage(Viewport viewport, Game game) {
-        super(viewport, game);
-    }
-
     public MenuStage(Viewport viewport, Batch batch, Game game) {
 
         super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(false);
     }
 
-    public MenuStage(Game game) {
-
-        super(game);
-    }
 
     public void refresh() {
 
         backGround.setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
 
     }
+
 
     public void init(){
         me = this;
@@ -81,7 +77,7 @@ public class MenuStage extends MyStage {
         addActor(settingsButton = new MyTextButton(""){
             @Override
             protected void init() {
-                debug();
+                //debug();
                 setTexture(Assets.manager.get(Assets.SETTINGS_ICON));
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(me.getWidth()-this.getWidth(),0);
@@ -113,7 +109,7 @@ public class MenuStage extends MyStage {
         addActor(musicButton = new MyTextButton(""){
             @Override
             protected void init() {
-                debug();
+                //debug();
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(me.getWidth()-this.getWidth(),settingsButton.getHeight());
                 if(Globals.zeneKelle){

@@ -1,6 +1,8 @@
 package hu.tokingame.elso;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -15,20 +17,22 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class SettingsStage extends MyStage {
 
-    public SettingsStage(Game game) {
-        super(game);
-        init();
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.BACK){
+            game.setScreen(new MenuScreen(game));
+        }
+        return false;
     }
 
     public SettingsStage(Viewport viewport, Batch batch, Game game) {
         super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
         init();
     }
 
-    public SettingsStage(Viewport viewport, Game game) {
-        super(viewport, game);
-        init();
-    }
+
 
 
     @Override
