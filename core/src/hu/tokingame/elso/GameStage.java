@@ -69,7 +69,7 @@ public class GameStage extends MyStage {
             }
         });
 
-        setDebugAll(true);
+        setDebugAll(false);
 
     }
 }

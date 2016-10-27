@@ -81,7 +81,7 @@ public class MenuStage extends MyStage {
         addActor(settingsButton = new MyTextButton(""){
             @Override
             protected void init() {
-                debug();
+                //debug();
                 setTexture(Assets.manager.get(Assets.SETTINGS_ICON));
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(me.getWidth()-this.getWidth(),0);
@@ -98,7 +98,7 @@ public class MenuStage extends MyStage {
         addActor(musicButton = new MyTextButton(""){
             @Override
             protected void init() {
-                debug();
+                //debug();
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(me.getWidth()-this.getWidth(),settingsButton.getHeight());
                 if(Globals.zeneKelle){

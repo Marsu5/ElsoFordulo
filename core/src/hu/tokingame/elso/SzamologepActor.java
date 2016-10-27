@@ -288,7 +288,7 @@ public class SzamologepActor extends Group {
         display.setSize(400,100);
         display.setFontScale(1.5f);
         display.setColor(0,0,0,1);
-        display.debug();
+        //display.debug();
         addActor(display);// számológép kijelző aktora
 
 
