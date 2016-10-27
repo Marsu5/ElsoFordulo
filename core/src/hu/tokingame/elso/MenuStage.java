@@ -26,6 +26,7 @@ public class MenuStage extends MyStage {
     private TextButton settingsButton;
     private TextButton musicButton;
 
+
     public MenuStage(Viewport viewport, Game game) {
         super(viewport, game);
     }
@@ -48,6 +49,7 @@ public class MenuStage extends MyStage {
 
     public void init(){
         me = this;
+        SzamologepActor.game = game;
 
         addActor(backGround = new OneSpriteStaticActor(Assets.manager.get(Assets.MENU_BACKGROUDN)));
 

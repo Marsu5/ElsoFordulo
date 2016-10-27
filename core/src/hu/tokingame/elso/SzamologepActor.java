@@ -4,6 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.Game;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import com.sun.org.apache.xpath.internal.operations.String;
 
@@ -15,7 +16,7 @@ import java.util.Vector;
 
 public class SzamologepActor extends Group {
     public MyLabel display;
-    private MyLabel fx;
+    public static Game game;
     private SzamologepActor szamologepActor;
     private java.lang.String jo = "HELYES"; //amit kiír ha helyes a válasz
     private java.lang.String rosz = "ERROR"; // ha rossz
@@ -59,7 +60,7 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() { // 2-es gomb
-                setPosition(900,129);
+                setPosition(900,134);
                 setSize(120,70);
                 addListener(new ClickListener(){
                     @Override
@@ -74,7 +75,7 @@ public class SzamologepActor extends Group {
         });addActor(new MyActorInit() {
             @Override
             void init() { // 3-es gomb
-                setPosition(1059,124);
+                setPosition(1059,134);
                 setSize(120,70);
                 addListener(new ClickListener(){
                     @Override
@@ -186,8 +187,8 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() { // törlés gomb
-                setPosition(1059,430);
-                setSize(110,60);
+                setPosition(1059,405);
+                setSize(110,55);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
@@ -212,7 +213,7 @@ public class SzamologepActor extends Group {
                        super.clicked(event, x, y);
                        if(display.getText().length() > 0){
                            try{
-                               int a = Integer.parseInt(display.getText().toString());
+                               long a = Long.parseLong(display.getText().toString());
                                osszevet(a);
                            }catch (Exception e){
                                System.out.println("huehue");
@@ -225,17 +226,19 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() { // + - váltó gomb
-                setPosition(600,30);
-                setSize(110,60);
+                setPosition(750,405);
+                setSize(110,49);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if (display.getText().length() != 0 && !display.getText().toString().equals(jo) && !display.getText().toString().equals(rosz)){
-                            if (display.getText().charAt(0)=='-'){
-                                display.setText(display.getText().substring(1,display.getText().length()));
-                            }else{
-                                display.setText("-"+display.getText());
+                            if(!display.getText().toString().equals(kepletString())){
+                                if (display.getText().charAt(0)=='-'){
+                                    display.setText(display.getText().substring(1,display.getText().length()));
+                                }else{
+                                    display.setText("-"+display.getText());
+                                }
                             }
                         }else{
                             display.setText("-");
@@ -250,14 +253,29 @@ public class SzamologepActor extends Group {
         addActor(new MyActorInit() {
             @Override
             void init() { // fx gomb
-                setPosition(480,30);
-                setSize(120,70);
+                setPosition(900,405);
+                setSize(120,55);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        display.setText(kepletString().toString().toString().toString().toString()); // vicces
+                        display.setText(kepletString().toString());
                         System.out.println("FX");
+                    }
+
+                });
+            }
+        });
+        addActor(new MyActorInit() {
+            @Override
+            void init() {
+                setPosition(750,461);
+                setSize(120,45);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        game.setScreen(new MenuScreen(game));
                     }
 
                 });
@@ -268,7 +286,7 @@ public class SzamologepActor extends Group {
 
         display.setPosition(740,510);
         display.setSize(400,100);
-        display.setFontScale(2);
+        display.setFontScale(1.5f);
         display.setColor(0,0,0,1);
         display.debug();
         addActor(display);// számológép kijelző aktora
@@ -290,7 +308,7 @@ public class SzamologepActor extends Group {
         return s;
     }
 
-    public void osszevet(int bevitt){
+    public void osszevet(Long bevitt){
 
         long u = Generator.getSorozatElemek().get(5);
         if(bevitt == u){
@@ -299,8 +317,11 @@ public class SzamologepActor extends Group {
         else{
             display.setText(rosz);
             hibak++;
-            NotepadActor.setHibaszaml(hibak +"/"+ maxhibak);
-            if(hibak == maxhibak) System.out.println("Elfogyott a lehetőség"); // IDE MÉG KELL VALAMI HA ELFOGY A LEHETŐSÉG AKKOR CSINÁLJON MONDJUK SYSTEM.EXIT(0) XD HUEHUE
+            NotepadActor.setHibaszaml("Próbálkozások: "+hibak +"/"+ maxhibak);
+            if(hibak == maxhibak) {
+                //System.out.println("Elfogyott a lehetőség"); // IDE MÉG KELL VALAMI HA ELFOGY A LEHETŐSÉG AKKOR CSINÁLJON MONDJUK SYSTEM.EXIT(0) XD HUEHUE
+                game.setScreen(new GameScreen(game));
+            }
         }
     }
 

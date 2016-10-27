@@ -43,8 +43,9 @@ public class NotepadActor extends Group {
 
         setSize(1280, 720);
 
-        hibaszaml = new MyLabel("0/5", MyLabel.style3);
+        hibaszaml = new MyLabel("Próbálkozások: 0/5", MyLabel.style3);
         addActor(hibaszaml);
+        hibaszaml.setPosition(85,23);
     }
     public void generate(){
         Generator.Generat();

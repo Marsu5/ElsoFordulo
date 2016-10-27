@@ -51,27 +51,23 @@ public class GameStage extends MyStage {
         notepadActor.setPosition(0,0);
 
         SzamologepActor szamologepActor;
-        addActor(szamologepActor = new SzamologepActor(){
-
-        });// szamolo gep gombok.
+        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
         szamologepActor.setPosition(0,0);
 
         addActor(new MyActorInit() {
             @Override
             void init() { // uj játék gomb
-                this.setPosition(0,0);
+                this.setPosition(520,13);
                 this.setSize(100,100);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
-
                         super.clicked(event, x, y);
                         game.setScreen(new GameScreen(game));
                     }
                 });
             }
         });
-
 
         setDebugAll(true);
 
