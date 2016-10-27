@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.sun.org.apache.xpath.internal.SourceTree;
+import com.sun.org.apache.xpath.internal.operations.String;
 
 import java.util.Vector;
 
@@ -14,9 +15,10 @@ import java.util.Vector;
 
 public class SzamologepActor extends Group {
     public MyLabel display;
-    private MyDialog dialog;
-    private String jo = "PORFIKT";
-    private String rosz = "NEM";
+    private MyLabel fx;
+    private SzamologepActor szamologepActor;
+    private java.lang.String jo = "PORFIKT";
+    private java.lang.String rosz = "NEM";
     {
         display=new MyLabel("", MyLabel.style2);
 
@@ -30,17 +32,17 @@ public class SzamologepActor extends Group {
                 setPosition(730,30);
                 setSize(120,70);
                 addListener(new ClickListener(){
-                @Override
-                public void clicked(InputEvent event, float x, float y) {
-                    super.clicked(event, x, y);
-                    display.setText(display.getText() + "0");
-                    System.out.println("0");
-                }
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        display.setText(display.getText() + "0");
+                        System.out.println("0");
+                    }
 
-            });
-        }
-    });
-    addActor(new MyActorInit() {
+                });
+            }
+        });
+        addActor(new MyActorInit() {
         @Override
         void init() { // 1-es gomb
             setPosition(738,134);
@@ -231,7 +233,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if (display.getText().length() != 0){
+                        if (display.getText().length() != 0 && !display.getText().toString().equals(jo) && !display.getText().toString().equals(rosz)){
                             if (display.getText().charAt(0)=='-'){
                                 display.setText(display.getText().substring(1,display.getText().length()));
                             }else{
@@ -244,34 +246,40 @@ public class SzamologepActor extends Group {
                 });
             }
         });
-
-
-
-
-
-        /* Ez az FX gomb lesz ami majd megnyit egy dialog-ot
+        szamologepActor=this;
         addActor(new MyActorInit() {
             @Override
             void init() { // fx gomb
-                setPosition(0, 0);
-                setSize(290, 80);
+                setPosition(480,30);
+                setSize(120,70);
                 addListener(new ClickListener(){
-                    public void clicked(InputEvent event, float x, float y){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        String s = Generator.getFuggveny().toString();
-                        addActor(dialog = new MyDialog("Fugveny"));
-                        dialog.setPosition(MyScreen.WORLD_WIDTH/2f-dialog.getWidth()/2f,MyScreen.WORLD_HEIGHT/2f-dialog.getHeight()/2f);
-                        dialog.setTexture(Assets.manager.get(Assets.MENU_BACKGROUDN));
-
+                        szamologepActor.addActor (fx = new MyLabel(kepletString(),MyLabel.style3));
+                        fx.setPosition(100, 23);
+                        System.out.println("FX");
                     }
+
                 });
             }
         });
 
-        */
+
+
 
     }
 
+
+    private java.lang.String kepletString(){
+        java.lang.String s = "x";
+        java.lang.String keplet = Generator.getFuggveny().toString();
+        keplet = keplet.replace(",", "");
+        keplet = keplet.replace(" ","");
+        keplet = keplet.substring(2,keplet.length()-1);
+        s += keplet;
+        return s;
+    }
 
     public void osszevet(int bevitt){
 
