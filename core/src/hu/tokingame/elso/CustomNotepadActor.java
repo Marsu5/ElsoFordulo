@@ -34,6 +34,8 @@ public class CustomNotepadActor extends Group {
         notepadActors.get(4).setText(sorozat.get(4)+"");
         notepadActors.get(5).setPosition(100, 304);
         notepadActors.get(5).setText("?");
+
+        setSize(1280, 720);
     }
 
 

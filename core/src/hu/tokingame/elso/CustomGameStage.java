@@ -34,7 +34,8 @@ public class CustomGameStage extends MyStage {
             protected void init() {
                 super.init();
                 setPosition(0f,0f);
-                setSize(stage.getViewport().getWorldWidth(),stage.getViewport().getWorldHeight());
+                //setSize(stage.getViewport().getWorldWidth(),stage.getViewport().getWorldHeight());
+                setSize(1280,720);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
@@ -44,8 +45,8 @@ public class CustomGameStage extends MyStage {
                 });
             }
         });
-        addActor(new SzamologepActor());// szamolo gep gombok.
         addActor(customNotepadActor = new CustomNotepadActor());// jegyzettomb sorok
+        customNotepadActor.setPosition(0,0);
         addActor(new MyActorInit() {
             @Override
             void init() { // uj játék gomb
@@ -60,7 +61,11 @@ public class CustomGameStage extends MyStage {
                 });
             }
         });
-        setDebugAll(true);
 
+        SzamologepActor szamologepActor;
+        addActor(szamologepActor = new SzamologepActor());// szamolo gep gombok.
+        szamologepActor.setPosition(0,0);
+
+        setDebugAll(true);
     }
 }
