@@ -53,31 +53,23 @@ public class MenuStage extends MyStage {
 
 
 
-        addActor(new MyTextButton("Egyszerű Mód") {
+        addActor(new MyTextButton("") {
             @Override
             protected void init() {
+                this.setTexture(Assets.manager.get(Assets.PLAY_BUTTON));
+                this.setSize(Assets.manager.get(Assets.PLAY_BUTTON).getWidth(),Assets.manager.get(Assets.PLAY_BUTTON).getHeight());
                 this.setPosition(me.getWidth()/2f-this.getWidth()/2f,me.getHeight()/2f-this.getHeight()/2f);
-
                 addListener(new ClickListener()
                 {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         //super.clicked(event, x, y);
-                        me.game.setScreen(new GameScreen(game));
-                    }
-                });
-            }
-        });
+                        if(!Globals.egyediMode){
+                            me.game.setScreen(new GameScreen(game));
+                        }else{
+                            // egyedi mode helye
+                        }
 
-        addActor(new MyTextButton("Egyéni Mód") {
-            @Override
-            protected void init() {
-                this.setPosition(me.getWidth()/2f-this.getWidth()/2f,me.getHeight()/2f-this.getHeight()*2f);
-                addListener(new ClickListener() {
-                    @Override
-                    public void clicked(InputEvent event, float x, float y) {
-                        super.clicked(event, x, y);
-                        me.game.setScreen(new GameScreen(game));
                     }
                 });
             }
