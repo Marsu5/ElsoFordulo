@@ -46,7 +46,7 @@ public class GameStage extends MyStage {
                 super.init();
                 setPosition(0f,0f);
                 //setSize(stage.getViewport().getWorldWidth(),stage.getViewport().getWorldHeight());
-                setSize(1280,720);
+                setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {

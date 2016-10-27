@@ -292,7 +292,7 @@ public class SzamologepActor extends Group {
         addActor(display);// számológép kijelző aktora
 
 
-        setSize(1280, 720);
+        setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT);
 
 
     }

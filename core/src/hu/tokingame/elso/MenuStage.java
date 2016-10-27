@@ -37,9 +37,9 @@ public class MenuStage extends MyStage {
 
 
     public void refresh() {
-
-        backGround.setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
-
+        backGround.setPosition(0,0);
+        //backGround.setSize(getViewport().getWorldWidth(),getViewport().getWorldHeight());
+        backGround.setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
     }
 
 
@@ -80,7 +80,7 @@ public class MenuStage extends MyStage {
                 debug();
                 setTexture(Assets.manager.get(Assets.SETTINGS_ICON));
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
-                setPosition(me.getWidth()-this.getWidth(),0);
+                setPosition(MyScreen.WORLD_WIDTH-this.getWidth(),0);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
@@ -96,7 +96,7 @@ public class MenuStage extends MyStage {
             protected void init() {
                 debug();
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
-                setPosition(me.getWidth()-this.getWidth(),settingsButton.getHeight());
+                setPosition(MyScreen.WORLD_WIDTH-this.getWidth(),settingsButton.getHeight());
                 if(Globals.zeneKelle){
                     setTexture(Assets.manager.get(Assets.MUSIC_ON));
                 }else{

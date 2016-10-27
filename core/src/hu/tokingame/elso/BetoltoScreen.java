@@ -19,7 +19,7 @@ public class BetoltoScreen extends MyScreen {
         setBackGroundColor(0f, 0f, 0f);
         stage = new Stage(viewport, spriteBatch);
         stage.addActor(backGround= new OneSpriteStaticActor("wood.png"));
-        backGround.setSize(viewport.getWorldWidth(),viewport.getWorldHeight());
+        backGround.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT);
         backGround.setPosition(0,0);
         stage.addActor(new OneSpriteAnimatedActor("load.txt")
         {
@@ -27,8 +27,9 @@ public class BetoltoScreen extends MyScreen {
             protected void init() {
                 super.init();
                 setFps(10);
-                setWidth(WORLD_WIDTH);
-                setHeight(WORLD_HEIGHT);
+                //setWidth(WORLD_WIDTH);
+                //setHeight(WORLD_HEIGHT);
+                setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT);
             }
         });
     }

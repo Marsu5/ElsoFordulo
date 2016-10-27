@@ -41,7 +41,7 @@ public class NotepadActor extends Group {
         notepadActors.get(5).setPosition(100, 304);
         notepadActors.get(5).setText("?");
 
-        setSize(1280, 720);
+        setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT);
 
         hibaszaml = new MyLabel("Próbálkozások: 0/5", MyLabel.style3);
         addActor(hibaszaml);
