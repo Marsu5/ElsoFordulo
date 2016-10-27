@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 /**
  * Created by davim on 2016. 09. 30..
@@ -17,6 +18,7 @@ abstract public class MyScreen implements Screen {
     protected SpriteBatch spriteBatch = new SpriteBatch();
     protected OrthographicCamera camera = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
     protected ExtendViewport viewport = new ExtendViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
+    //protected StretchViewport viewport = new StretchViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
 
     public float r=0,g=0,b=0;
 
