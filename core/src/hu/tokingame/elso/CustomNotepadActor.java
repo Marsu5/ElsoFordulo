@@ -1,24 +1,19 @@
 package hu.tokingame.elso;
 
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 
 import java.util.Vector;
 
-
 /**
- * Created by M on 10/24/2016.
+ * Created by M on 10/27/2016.
  */
 
-public class NotepadActor extends Group {
+public class CustomNotepadActor extends Group {
 
-    public NotepadActor notepadActor;
     public Vector<MyLabel> notepadActors;
     public Vector sorozat;
 
-    public NotepadActor() {
+    public CustomNotepadActor() {
         generate();
         sorozat = (Vector)Generator.getSorozatElemek().clone();
         notepadActors = new Vector<MyLabel>();
@@ -40,7 +35,14 @@ public class NotepadActor extends Group {
         notepadActors.get(5).setPosition(100, 304);
         notepadActors.get(5).setText("?");
     }
-    public void generate(){
+
+
+    public void generate() {
+        //super.generate();
+        Generator.setMaxM(Globals.maxM);
+        Generator.setMaxSz(Globals.maxSz);
+        Generator.setMinM(Globals.minM);
+        Generator.setMinSz(Globals.minSz);
         Generator.Generat();
     }
 }

@@ -67,7 +67,7 @@ public class MenuStage extends MyStage {
                         if(!Globals.egyediMode){
                             me.game.setScreen(new GameScreen(game));
                         }else{
-                            // egyedi mode helye
+                            me.game.setScreen(new CustomGameScreen(game));
                         }
 
                     }
