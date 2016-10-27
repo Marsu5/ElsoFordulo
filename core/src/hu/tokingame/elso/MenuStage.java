@@ -95,6 +95,21 @@ public class MenuStage extends MyStage {
             }
         });
 
+        addActor(new MyTextButton("Credits"){
+            @Override
+            protected void init() {
+                super.init();
+                setPosition(0,0);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        game.setScreen(new CreditsScreen(game));
+                    }
+                });
+            }
+        });
+
         addActor(musicButton = new MyTextButton(""){
             @Override
             protected void init() {
