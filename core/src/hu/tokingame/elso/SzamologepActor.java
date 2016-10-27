@@ -235,6 +235,8 @@ public class SzamologepActor extends Group {
                             }else{
                                 display.setText("-"+display.getText());
                             }
+                        }else{
+                            display.setText("-");
                         }
 
                     }
