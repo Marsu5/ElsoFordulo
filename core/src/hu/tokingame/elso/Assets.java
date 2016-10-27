@@ -4,6 +4,7 @@ import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -51,6 +52,7 @@ public class Assets {
     public static final AssetDescriptor<Texture> MUSIC_OFF = new AssetDescriptor<Texture>("sound-off.png", Texture.class);
     public static final AssetDescriptor<Texture> LOGO = new AssetDescriptor<Texture>("tokin-logo.png", Texture.class);
     public static final AssetDescriptor<Texture> MAIN_BACKGROUND = new AssetDescriptor<Texture>("background.png", Texture.class);
+    public static final AssetDescriptor<Music> MUSIC = new AssetDescriptor<Music>("Puzzle-Solving.mp3", Music.class);
 
     public static void prepare() {
         manager = new AssetManager();
@@ -79,10 +81,13 @@ public class Assets {
         manager.load(CALIBRIL_FONT);
         manager.load(DIGITAL_7_FONT);
 
+        manager.load(MUSIC);
+
     }
 
     public static void afterLoaded(){
-
+        manager.get(MUSIC).setLooping(true);
+        manager.get(MUSIC).play();
     }
 
     public static void unload(){

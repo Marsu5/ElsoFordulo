@@ -18,7 +18,7 @@ public class SzamologepActor extends Group {
     public MyLabel display;
     public static Game game;
     private SzamologepActor szamologepActor;
-    private java.lang.String jo = "HELYES"; //amit kiír ha helyes a válasz
+    private java.lang.String jo = "OK"; //amit kiír ha helyes a válasz
     private java.lang.String rosz = "ERROR"; // ha rossz
     private int maxhibak = 5; // hányszor hibázhat
     private int hibak = 0; // hányszor hibázott
@@ -321,6 +321,7 @@ public class SzamologepActor extends Group {
             if(hibak == maxhibak) {
                 //System.out.println("Elfogyott a lehetőség"); // IDE MÉG KELL VALAMI HA ELFOGY A LEHETŐSÉG AKKOR CSINÁLJON MONDJUK SYSTEM.EXIT(0) XD HUEHUE
                 game.setScreen(new GameScreen(game));
+
             }
         }
     }

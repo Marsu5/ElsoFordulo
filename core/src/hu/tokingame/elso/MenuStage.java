@@ -101,7 +101,11 @@ public class MenuStage extends MyStage {
                 debug();
                 setSize(Assets.manager.get(Assets.SETTINGS_ICON).getWidth(),Assets.manager.get(Assets.SETTINGS_ICON).getHeight());
                 setPosition(me.getWidth()-this.getWidth(),settingsButton.getHeight());
-                setTexture(Assets.manager.get(Assets.MUSIC_ON));
+                if(Globals.zeneKelle){
+                    setTexture(Assets.manager.get(Assets.MUSIC_ON));
+                }else{
+                    setTexture(Assets.manager.get(Assets.MUSIC_OFF));
+                }
 
                 addListener(new ClickListener(){
                     @Override
@@ -110,8 +114,10 @@ public class MenuStage extends MyStage {
                         Globals.zeneKelle = !Globals.zeneKelle;
                         if (Globals.zeneKelle){
                             setTexture(Assets.manager.get(Assets.MUSIC_ON));
+                            Assets.manager.get(Assets.MUSIC).play();
                         }else{
                             setTexture(Assets.manager.get(Assets.MUSIC_OFF));
+                            Assets.manager.get(Assets.MUSIC).pause();
                         }
                     }
                 });
