@@ -43,7 +43,8 @@ public class BetoltoScreen extends MyScreen {
     public void render(float delta) {
         super.render(delta);
 
-        if (elapsedTime > 2.0 && Assets.manager.update()) {
+        //if (elapsedTime > 2.0 && Assets.manager.update()) {
+        if (Assets.manager.update()) {
             Assets.afterLoaded();
             game.setScreen(new MenuScreen(game));
         }

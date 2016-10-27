@@ -20,7 +20,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
         private TextButton button;
         static TextButton.TextButtonStyle textButtonStyle;
         private TextButton.TextButtonStyle style;
-        static
+
+        static {
+            refresh();
+        }
+
+        public static void refresh()
         {
             textButtonStyle = new TextButton.TextButtonStyle();
             textButtonStyle.font = Assets.manager.get(Assets.CALIBRIL_FONT);

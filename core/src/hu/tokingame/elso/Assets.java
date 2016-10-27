@@ -4,6 +4,7 @@ import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
@@ -24,6 +25,7 @@ public class Assets {
         fontParameter.fontFileName = "calibril.ttf";
         fontParameter.fontParameters.size = 50;
         fontParameter.fontParameters.characters = Globals.CHARS;
+        fontParameter.fontParameters.color = Color.WHITE;
     }
 
     public static final AssetDescriptor<BitmapFont> CALIBRIL_FONT
@@ -56,6 +58,13 @@ public class Assets {
     }
 
     public static void load(){
+        FileHandleResolver resolver = new InternalFileHandleResolver();
+        //FileHandleResolver resolver = manager.getFileHandleResolver();
+        manager.setLoader(FreeTypeFontGenerator.class, new FreeTypeFontGeneratorLoader(resolver));
+        manager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
+        manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
+
+
         manager.load(MENU_BACKGROUDN);
         manager.load(CHECKBOX);
         manager.load(CHECKBOX_CHECKED);
@@ -66,10 +75,6 @@ public class Assets {
         manager.load(LOGO);
         manager.load(MAIN_BACKGROUND);
 
-        FileHandleResolver resolver = new InternalFileHandleResolver();
-        manager.setLoader(FreeTypeFontGenerator.class, new FreeTypeFontGeneratorLoader(resolver));
-        manager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
-        manager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
         manager.load(CALIBRIL_FONT);
         manager.load(DIGITAL_7_FONT);

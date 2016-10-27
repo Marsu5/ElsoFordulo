@@ -13,12 +13,12 @@ import com.badlogic.gdx.physics.box2d.World;
 
 public class Globals {
     public static final String CHARS = "0123456789öüóqwertzuiopőúasdfghjkléáűíyxcvbnm'+!%/=()ÖÜÓQWERTZUIOPŐÚASDFGHJKLÉÁŰÍYXCVBNM?:_*<>#&@{}[],-.";
-    public static final BitmapFont FONT_HOBO_STD;
-    public static final BitmapFont FONT_DIGITAL_7;
+   // public static final BitmapFont FONT_HOBO_STD;
+   // public static final BitmapFont FONT_DIGITAL_7;
     public static java.util.Vector<Integer> sorozat;
     public static boolean zeneKelle = true;
     public static boolean egyediMode = false; // ennek az értéke befolyásolja hogy egyéni vagy normál mód. 
-
+/*
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("calibril.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
@@ -36,5 +36,5 @@ public class Globals {
 
 
         generator.dispose();
-    }
+    }*/
 }

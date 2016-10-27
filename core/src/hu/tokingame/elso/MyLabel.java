@@ -17,6 +17,10 @@ public class MyLabel extends Label {
     public static com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle style3;
 
     static {
+        refresh();
+    }
+
+    public static void refresh() {
         style = new com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle();
         style.font = Assets.manager.get(Assets.CALIBRIL_FONT);
 
