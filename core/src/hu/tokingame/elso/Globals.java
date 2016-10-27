@@ -18,7 +18,7 @@ public class Globals {
    // public static final BitmapFont FONT_DIGITAL_7;
     public static java.util.Vector<Integer> sorozat;
     public static boolean zeneKelle = true;
-    public static boolean egyediMode = false; // ennek az értéke befolyásolja hogy egyéni vagy normál mód.
+    //public static boolean egyediMode = false; // ennek az értéke befolyásolja hogy egyéni vagy normál mód.
     public static int maxM = Generator.getMaxM();
     public static int minM = Generator.getMinM();
     public static int maxSz = Generator.getMaxSz();
