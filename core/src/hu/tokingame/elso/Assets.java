@@ -55,6 +55,7 @@ public class Assets {
     public static final AssetDescriptor<Music> MUSIC = new AssetDescriptor<Music>("Puzzle-Solving.mp3", Music.class);
     public static final AssetDescriptor<Texture> CREDITS = new AssetDescriptor<Texture>("credits.png", Texture.class);
     public static final AssetDescriptor<Texture> HELP = new AssetDescriptor<Texture>("help.png", Texture.class);
+    public static final AssetDescriptor<Texture> EXITSCREEN = new AssetDescriptor<Texture>("exitscreen.png", Texture.class);
 
     public static void prepare() {
         manager = new AssetManager();
@@ -80,6 +81,7 @@ public class Assets {
         manager.load(MAIN_BACKGROUND);
         manager.load(CREDITS);
         manager.load(HELP);
+        manager.load(EXITSCREEN);
 
 
         manager.load(CALIBRIL_FONT);
