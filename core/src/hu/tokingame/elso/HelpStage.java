@@ -50,9 +50,15 @@ public class HelpStage extends MyStage {
                 "del gomb: kitörli a számológép képernyőjének tartalmának legutolsó elemét\n" +
                 "a lap sarkán a pörgő nyíl szerű valami: új sorozatot generál\n" +
                 "egyenlőség gomb: ezzel lehet bevinni az általad helyesnek vélt eredményt\n" +
-                "számgombok: ezekkel lehet beírni számokat\n"));
-        label.setPosition(1280/2f-label.getWidth()/2f,720/6f);
-        label.setFontScale(0.75f);
+                "számgombok: ezekkel lehet beírni számokat\n" +
+                "\nSzámológép üzeneteinek jelentése:\n" +
+                "OK: A bevitt adat helyes\n" +
+                "ERROR: A bevitt adat helytelen\n" +
+                "NO DATA: Nem írtál be semmit."));
+        label.setHeight(650);
+
+        label.setFontScale(0.7f);
+        label.setPosition(1280/2f-label.getWidth()/2f, (MyScreen.WORLD_HEIGHT-label.getHeight())/2);
 
         addActor(new MyTextButton("Vissza"){
             @Override
