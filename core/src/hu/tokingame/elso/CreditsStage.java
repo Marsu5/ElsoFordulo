@@ -62,7 +62,7 @@ public class CreditsStage extends MyStage {
                 "Források:\n" +
                 "Képek: mi rajzoltuk (igen, mindet)\n" +
                 "Zene: http://www.dl-sounds.com/royalty-free/puzzle-solving/"));
-        label.setPosition(1280/2f-label.getWidth()/2f,720/2f);
+        label.setPosition(1280/2f-label.getWidth()/2f,720/4f);
 
         addActor(new MyTextButton("Vissza"){
             @Override
