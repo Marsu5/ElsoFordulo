@@ -58,7 +58,10 @@ public class CreditsStage extends MyStage {
                 "-Bálint Dániel - grafika\n" +
                 "-Dávid Mátyás - kód és dizájn\n" +
                 "-Kovács Zoltán - kód\n" +
-                "-Schuh Marcell - kód"));
+                "-Schuh Marcell - kód\n\n" +
+                "Források:\n" +
+                "Képek: mi rajzoltuk (igen, mindet)\n" +
+                "Zene: http://www.dl-sounds.com/royalty-free/puzzle-solving/"));
         label.setPosition(1280/2f-label.getWidth()/2f,720/2f);
 
         addActor(new MyTextButton("Vissza"){
