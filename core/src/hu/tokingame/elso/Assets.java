@@ -56,6 +56,8 @@ public class Assets {
     public static final AssetDescriptor<Texture> CREDITS = new AssetDescriptor<Texture>("credits.png", Texture.class);
     public static final AssetDescriptor<Texture> HELP = new AssetDescriptor<Texture>("help.png", Texture.class);
     public static final AssetDescriptor<Texture> EXITSCREEN = new AssetDescriptor<Texture>("exitscreen.png", Texture.class);
+    public static final AssetDescriptor<Texture> DOGE = new AssetDescriptor<Texture>("Doge.png", Texture.class);
+    public static final AssetDescriptor<Texture> URES = new AssetDescriptor<Texture>("ures.png", Texture.class); //igen most komolyan betöltöttem egy üres textúrát jóvanna
 
     public static void prepare() {
         manager = new AssetManager();
@@ -82,6 +84,8 @@ public class Assets {
         manager.load(CREDITS);
         manager.load(HELP);
         manager.load(EXITSCREEN);
+        manager.load(DOGE);
+        manager.load(URES);
 
 
         manager.load(CALIBRIL_FONT);

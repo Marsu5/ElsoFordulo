@@ -90,7 +90,7 @@ public class Generator {
         {
             System.out.print(" " + ujmuvelet.get(i-1) + " " + ujszam.get(i));
         }
-        System.out.println("");
+        //System.out.println("");
     }
     
     public static void Generat(){ //Ezt kell meghívni amikor generálni akarunk.
@@ -101,11 +101,11 @@ public class Generator {
 
         generalas();
         for(int i = 0; i< elemSzam; i++) {
-            System.out.println(getSorozatElem(i));
+            //System.out.println(getSorozatElem(i));
             SorozatElemek.add(getSorozatElem(i));
         }
-        System.out.println(Fuggveny.toString());
-        System.out.println(getSorozatElemek());
+        //System.out.println(Fuggveny.toString());
+        //System.out.println(getSorozatElemek());
     }
 
     

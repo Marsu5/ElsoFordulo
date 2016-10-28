@@ -43,7 +43,7 @@ public class CustomGameStage extends MyStage {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        System.out.println(x+", "+y);
+                        //System.out.println(x+", "+y);
                     }
                 });
             }

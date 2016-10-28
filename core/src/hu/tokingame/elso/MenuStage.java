@@ -27,6 +27,8 @@ public class MenuStage extends MyStage {
     private TextButton.TextButtonStyle style;
     private TextButton settingsButton;
     private TextButton musicButton;
+    private TextButton showDoge;
+    private TextButton playButton;
 
 
     public MenuStage(Viewport viewport, Batch batch, Game game) {
@@ -58,12 +60,13 @@ public class MenuStage extends MyStage {
 
 
 
-        addActor(new MyTextButton("") {
+        addActor(playButton = new MyTextButton("") {
             @Override
             protected void init() {
                 this.setTexture(Assets.manager.get(Assets.PLAY_BUTTON));
                 this.setSize(Assets.manager.get(Assets.PLAY_BUTTON).getWidth(),Assets.manager.get(Assets.PLAY_BUTTON).getHeight());
                 this.setPosition(me.getWidth()/2f-this.getWidth()/2f,me.getHeight()/2f-this.getHeight()/2f);
+
                 addListener(new ClickListener()
                 {
                     @Override
@@ -78,6 +81,7 @@ public class MenuStage extends MyStage {
                     }
                 });
             }
+
         });
 
 
@@ -161,7 +165,50 @@ public class MenuStage extends MyStage {
 
             }
         });
+        addActor(showDoge = new MyTextButton(""){
+            @Override
+            protected void init() {
+                super.init();
+                setTexture(Assets.manager.get(Assets.URES));
+                setSize(80, 80);
+                setPosition(0, MyScreen.WORLD_HEIGHT-80);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        //System.out.println("click");
+                        doge();
+                    }
+                });
+            }
+        });
 
         refresh();
+    }
+    void doge(){
+        addActor(new MyTextButton("") {
+            @Override
+            protected void init() {
+                this.setTexture(Assets.manager.get(Assets.DOGE));
+                this.setSize(Assets.manager.get(Assets.DOGE).getWidth(),Assets.manager.get(Assets.DOGE).getHeight());
+                this.setPosition(me.getWidth()/2f-this.getWidth()/2f,me.getHeight()/2f-this.getHeight()/2f);
+
+                addListener(new ClickListener()
+                {
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        //super.clicked(event, x, y);
+                        if(!Globals.egyediMode){
+                            me.game.setScreen(new GameScreen(game));
+                        }else{
+                            me.game.setScreen(new CustomGameScreen(game));
+                        }
+
+                    }
+                });
+            }
+
+        });
+        playButton.setDisabled(true);
     }
 }

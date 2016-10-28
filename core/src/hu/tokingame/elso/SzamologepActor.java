@@ -33,7 +33,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "0");
-                        System.out.println("0");
+                        //System.out.println("0");
                     }
 
                 });
@@ -49,7 +49,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "1");
-                        System.out.println("1");
+                        //System.out.println("1");
                     }
 
                 });
@@ -65,7 +65,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "2");
-                        System.out.println("2");
+                        //System.out.println("2");
                     }
 
                 });
@@ -80,7 +80,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "3");
-                        System.out.println("3");
+                        //System.out.println("3");
                     }
 
                 });
@@ -96,7 +96,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "4");
-                        System.out.println("4");
+                        //System.out.println("4");
                     }
 
                 });
@@ -112,7 +112,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "5");
-                        System.out.println("5");
+                        //System.out.println("5");
                     }
 
                 });
@@ -128,7 +128,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "6");
-                        System.out.println("6");
+                        //System.out.println("6");
                     }
 
                 });
@@ -144,7 +144,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "7");
-                        System.out.println("7");
+                        //System.out.println("7");
                     }
 
                 });
@@ -160,7 +160,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "8");
-                        System.out.println("8");
+                        //System.out.println("8");
                     }
 
                 });
@@ -176,7 +176,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || display.getText().toString().equals(noadat))) display.setText(display.getText() + "9");
-                        System.out.println("9");
+                        //System.out.println("9");
                     }
 
                 });
@@ -194,7 +194,7 @@ public class SzamologepActor extends Group {
                         if (display.getText().length()!= 0){
                             if(display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()) || (display.getText().toString().equals(noadat))) display.setText("");
                             else display.setText(display.getText().substring(0,display.getText().length()-1));
-                            System.out.println("DEL");
+                            //System.out.println("DEL");
                         }
                     }
 
@@ -260,7 +260,7 @@ public class SzamologepActor extends Group {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         display.setText(kepletString().toString());
-                        System.out.println("FX");
+                        //System.out.println("FX");
                     }
 
                 });
