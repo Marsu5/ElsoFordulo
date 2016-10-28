@@ -53,6 +53,8 @@ public class Assets {
     public static final AssetDescriptor<Texture> LOGO = new AssetDescriptor<Texture>("tokin-logo.png", Texture.class);
     public static final AssetDescriptor<Texture> MAIN_BACKGROUND = new AssetDescriptor<Texture>("background.png", Texture.class);
     public static final AssetDescriptor<Music> MUSIC = new AssetDescriptor<Music>("Puzzle-Solving.mp3", Music.class);
+    public static final AssetDescriptor<Texture> CREDITS = new AssetDescriptor<Texture>("credits.png", Texture.class);
+    public static final AssetDescriptor<Texture> HELP = new AssetDescriptor<Texture>("help.png", Texture.class);
 
     public static void prepare() {
         manager = new AssetManager();
@@ -76,6 +78,8 @@ public class Assets {
         manager.load(MUSIC_OFF);
         manager.load(LOGO);
         manager.load(MAIN_BACKGROUND);
+        manager.load(CREDITS);
+        manager.load(HELP);
 
 
         manager.load(CALIBRIL_FONT);

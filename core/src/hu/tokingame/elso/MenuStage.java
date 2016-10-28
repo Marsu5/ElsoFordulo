@@ -98,11 +98,13 @@ public class MenuStage extends MyStage {
             }
         });
 
-        addActor(new MyTextButton("Credits"){
+        addActor(new MyTextButton(""){
             @Override
             protected void init() {
                 super.init();
                 setPosition(0,0);
+                setSize(Assets.manager.get(Assets.CREDITS).getWidth(),Assets.manager.get(Assets.CREDITS).getHeight());
+                setTexture(Assets.manager.get(Assets.CREDITS));
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
@@ -110,6 +112,23 @@ public class MenuStage extends MyStage {
                         game.setScreen(new CreditsScreen(game));
                     }
                 });
+            }
+        });
+        addActor(new MyTextButton(""){
+            @Override
+            protected void init() {
+                super.init();
+                setPosition(0, 100);
+                setSize(Assets.manager.get(Assets.HELP).getWidth(),Assets.manager.get(Assets.HELP).getHeight());
+                setTexture(Assets.manager.get(Assets.HELP));
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y){
+                        super.clicked(event, x, y);
+                        //game.setScreen();
+                    }
+                });
+
             }
         });
 
