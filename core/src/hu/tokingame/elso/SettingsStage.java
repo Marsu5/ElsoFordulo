@@ -17,6 +17,9 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class SettingsStage extends MyStage {
 
+    private DifficultyActor difficultyActor;
+    private SettingsStage settingsStage;
+
 
     @Override
     public boolean keyDown(int keycode) {
@@ -37,6 +40,8 @@ public class SettingsStage extends MyStage {
 
     @Override
     protected void init() {
+        DifficultyActor.game = game;
+        settingsStage = this;
 
         addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENU_BACKGROUDN)){
             @Override
@@ -54,8 +59,11 @@ public class SettingsStage extends MyStage {
                 setSize(Assets.manager.get(Assets.CHECKBOX).getWidth(),Assets.manager.get(Assets.CHECKBOX).getHeight());
                 if (Globals.egyediMode){
                     setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
+                    settingsStage.addActor(difficultyActor = new DifficultyActor());
+                    difficultyActor.setPosition(0,0);
                 }else{
                     setTexture(Assets.manager.get(Assets.CHECKBOX));
+                    settingsStage.getActors().removeValue(difficultyActor, true);
                 }
                 setPosition(0,720-getHeight());
                 final MyTextButton MyTextButton = this;
@@ -66,8 +74,11 @@ public class SettingsStage extends MyStage {
                         Globals.egyediMode = ! Globals.egyediMode;
                         if (Globals.egyediMode){
                             MyTextButton.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
+                            settingsStage.addActor(difficultyActor = new DifficultyActor());
+                            difficultyActor.setPosition(0,0);
                         }else {
                             MyTextButton.setTexture(Assets.manager.get(Assets.CHECKBOX));
+                            settingsStage.getActors().removeValue(difficultyActor, true);
                         }
                     }
                 });
@@ -75,7 +86,7 @@ public class SettingsStage extends MyStage {
         });
 
         MyLabel label1;
-        addActor(label1 = new MyLabel("Egyedi mód engedélyezése."));
+        addActor(label1 = new MyLabel("Nehézségi szint engedélyezése."));
         label1.setPosition(0+Assets.manager.get(Assets.CHECKBOX).getWidth(),720-label1.getHeight());
 
         addActor(new MyTextButton("Vissza"){
@@ -91,9 +102,7 @@ public class SettingsStage extends MyStage {
                     }
                 });
             }
-        });
-        Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
-
+        } );
 
     }
 }
