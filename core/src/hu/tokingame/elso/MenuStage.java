@@ -44,7 +44,7 @@ public class MenuStage extends MyStage {
     @Override
     public boolean keyDown(int keycode) {
         if(keycode == Input.Keys.BACK){
-            System.exit(0);
+           game.setScreen(new ExitScreen(game));
         }
         return false;
     }

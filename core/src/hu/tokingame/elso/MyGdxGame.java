@@ -3,6 +3,13 @@ package hu.tokingame.elso;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 
+/*
+Help (hogyan játszd) képernyő
+zene
+credits (készítők)
+
+ */
+
 public class MyGdxGame extends Game {
 	@Override
 	public void create () {

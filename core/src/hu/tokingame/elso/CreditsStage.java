@@ -55,10 +55,10 @@ public class CreditsStage extends MyStage {
         });
 
         addActor(label = new MyLabel("Készítették:\n" +
-                "-Bálint Dániel - grafika\n" +
-                "-Dávid Mátyás - kód és dizájn\n" +
-                "-Kovács Zoltán - kód\n" +
-                "-Schuh Marcell - kód\n\n" +
+                "Bálint Dániel - grafika\n" +
+                "Dávid Mátyás - kód és dizájn\n" +
+                "Kovács Zoltán - kód\n" +
+                "Schuh Marcell - kód\n\n" +
                 "Források:\n" +
                 "Képek: mi rajzoltuk (igen, mindet)\n" +
                 "Zene: http://www.dl-sounds.com/royalty-free/puzzle-solving/"));

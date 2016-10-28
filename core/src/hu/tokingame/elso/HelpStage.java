@@ -43,15 +43,16 @@ public class HelpStage extends MyStage {
         });
 
         addActor(label = new MyLabel("A játék legenerál egy sorozat első öt elemét, a te feladatod kitalálni a hatodikat.\n" +
-                "A bevitel a játékképernyő bal oldalán található (Tökin márkájú) számológéppel lehetséges.\n" +
+                "A bevitel a játékképernyő bal oldalán található (Tökin márkájú)\n számológéppel lehetséges.\n" +
                 "Gombok:\n" +
-                "- off gomb: kilépés a főmenübe\n" +
-                "- fx gomb: kiírja az aktuális sorozathoz felhasznált képletet\n" +
-                "- del gomb: kitörli a számológép képernyőjének tartalmának legutolsó elemét\n" +
-                "- a lap sarkán a pörgő nyíl szerű valami: új sorozatot generál\n" +
-                "- egyenlőség gomb: ezzel lehet bevinni az általad helyesnek vélt eredményt\n" +
-                "- számgombok: ezekkel lehet beírni számokat\n"));
-        label.setPosition(1280/2f-label.getWidth()/2f,720/4f);
+                "off gomb: kilépés a főmenübe\n" +
+                "fx gomb: kiírja az aktuális sorozathoz felhasznált képletet\n" +
+                "del gomb: kitörli a számológép képernyőjének tartalmának legutolsó elemét\n" +
+                "a lap sarkán a pörgő nyíl szerű valami: új sorozatot generál\n" +
+                "egyenlőség gomb: ezzel lehet bevinni az általad helyesnek vélt eredményt\n" +
+                "számgombok: ezekkel lehet beírni számokat\n"));
+        label.setPosition(1280/2f-label.getWidth()/2f,720/6f);
+        label.setFontScale(0.75f);
 
         addActor(new MyTextButton("Vissza"){
             @Override
