@@ -46,7 +46,6 @@ public class CustomNotepadActor extends Group {
 
 
     public void generate() {
-        //super.generate();
         Generator.setMaxM(Globals.maxM);
         Generator.setMaxSz(Globals.maxSz);
         Generator.setMinM(Globals.minM);
