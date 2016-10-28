@@ -47,10 +47,18 @@ public class CustomNotepadActor extends Group {
 
     public void generate() {
         //super.generate();
-        Generator.setMaxM(Globals.maxM);
-        Generator.setMaxSz(Globals.maxSz);
-        Generator.setMinM(Globals.minM);
-        Generator.setMinSz(Globals.minSz);
-        Generator.Generat();
+        if(Globals.nehez){
+            Generator.setMaxM(3);
+            Generator.setMaxSz(2);
+            Generator.setMinM(2);
+            Generator.setMinSz(1);
+            Generator.Generat();
+    }else{
+            Generator.setMaxM(2);
+            Generator.setMaxSz(1);
+            Generator.setMinM(1);
+            Generator.setMinSz(1);
+            Generator.Generat();
+        }
     }
 }

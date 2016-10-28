@@ -15,7 +15,7 @@ public class DifficultyActor extends Group{
     private MyTextButton button2;
 
     public DifficultyActor() {
-        addActor(button1 = new MyTextButton(""){//könnyü
+        addActor(button1 = new MyTextButton(""){//könnyű
             @Override
             protected void init() {
                 super.init();
@@ -31,20 +31,22 @@ public class DifficultyActor extends Group{
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         Globals.nehez = ! Globals.nehez;
-                        if (Globals.nehez){
+                        /*if (Globals.nehez){
                             button1.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
                             button2.setTexture(Assets.manager.get(Assets.CHECKBOX));
                         }else {
                             button1.setTexture(Assets.manager.get(Assets.CHECKBOX));
                             button2.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
-                        }
+                        }*/
+                        button1.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
+                        button2.setTexture(Assets.manager.get(Assets.CHECKBOX));
                     }
                 });
             }
         });
 
         MyLabel label1;
-        addActor(label1 = new MyLabel("Könnyü"));
+        addActor(label1 = new MyLabel("Könnyű"));
         label1.setPosition(150+Assets.manager.get(Assets.CHECKBOX).getWidth(),600);
 
         addActor(button2 = new MyTextButton(""){//Nehéz
@@ -63,13 +65,15 @@ public class DifficultyActor extends Group{
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         Globals.nehez = ! Globals.nehez;
-                        if (!Globals.nehez){
+                        /*if (!Globals.nehez){
                             button1.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
                             button2.setTexture(Assets.manager.get(Assets.CHECKBOX));
                         }else {
                             button1.setTexture(Assets.manager.get(Assets.CHECKBOX));
                             button2.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
-                        }
+                        }*/
+                        button2.setTexture(Assets.manager.get(Assets.CHECKBOX_CHECKED));
+                        button1.setTexture(Assets.manager.get(Assets.CHECKBOX));
                     }
                 });
             }

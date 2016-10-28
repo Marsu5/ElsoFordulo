@@ -39,7 +39,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
             p.fill();
             textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
-            p.setColor(1f,0.5f,0.8f, 1f);
+            p.setColor(0f,1f,0.1f, 1f);
             p.fill();
             textButtonStyle.down = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 

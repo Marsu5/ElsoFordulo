@@ -86,7 +86,7 @@ public class SettingsStage extends MyStage {
         });
 
         MyLabel label1;
-        addActor(label1 = new MyLabel("Nehézségi szint engedélyezése."));
+        addActor(label1 = new MyLabel("Nehézségi szint beállításának engedélyezése."));
         label1.setPosition(0+Assets.manager.get(Assets.CHECKBOX).getWidth(),720-label1.getHeight());
 
         addActor(new MyTextButton("Vissza"){
