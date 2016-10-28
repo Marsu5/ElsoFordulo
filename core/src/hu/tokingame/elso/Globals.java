@@ -24,6 +24,7 @@ public class Globals {
     public static int minSz = Generator.getMinSz();
 
     public static boolean egyediMode = false; // ennek az értéke befolyásolja hogy egyéni vagy normál mód.
+    public static boolean nehez = false;
 /*
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("calibril.ttf"));

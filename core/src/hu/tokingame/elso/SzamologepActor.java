@@ -316,9 +316,11 @@ public class SzamologepActor extends Group {
             hibak++;
             NotepadActor.setHibaszaml("Próbálkozások: "+hibak +"/"+ maxhibak);
             if(hibak == maxhibak) {
-                //System.out.println("Elfogyott a lehetőség"); // IDE MÉG KELL VALAMI HA ELFOGY A LEHETŐSÉG AKKOR CSINÁLJON MONDJUK SYSTEM.EXIT(0) XD HUEHUE
-                game.setScreen(new GameScreen(game));
-
+                if(Globals.egyediMode) {
+                    game.setScreen(new CustomGameScreen(game));
+                }else{
+                    game.setScreen(new GameScreen(game));
+                }
             }
         }
     }
