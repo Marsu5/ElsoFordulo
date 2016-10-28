@@ -12,6 +12,7 @@ public class CustomNotepadActor extends Group {
 
     public Vector<MyLabel> notepadActors;
     public Vector sorozat;
+    private static MyLabel hibaszaml;
 
     public CustomNotepadActor() {
         generate();
@@ -34,6 +35,11 @@ public class CustomNotepadActor extends Group {
         notepadActors.get(4).setText(sorozat.get(4)+"");
         notepadActors.get(5).setPosition(100, 304);
         notepadActors.get(5).setText("?");
+        setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT);
+
+        hibaszaml = new MyLabel("Próbálkozások: 0/5", MyLabel.style3);
+        addActor(hibaszaml);
+        hibaszaml.setPosition(85,23);
 
         setSize(1280, 720);
     }

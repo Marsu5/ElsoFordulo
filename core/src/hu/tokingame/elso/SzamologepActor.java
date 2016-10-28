@@ -1,14 +1,9 @@
 package hu.tokingame.elso;
 
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.Game;
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.org.apache.xpath.internal.operations.String;
-
-import java.util.Vector;
 
 /**
  * Created by davim on 2016. 10. 21..
@@ -22,6 +17,8 @@ public class SzamologepActor extends Group {
     private java.lang.String rosz = "ERROR"; // ha rossz
     private int maxhibak = 5; // hányszor hibázhat
     private int hibak = 0; // hányszor hibázott
+    private final int maxHosz = 10;
+
 
     public SzamologepActor()
     {
@@ -34,7 +31,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "0");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "0");
                         System.out.println("0");
                     }
 
@@ -50,7 +47,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "1");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "1");
                         System.out.println("1");
                     }
 
@@ -66,7 +63,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "2");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "2");
                         System.out.println("2");
                     }
 
@@ -81,7 +78,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "3");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "3");
                         System.out.println("3");
                     }
 
@@ -97,7 +94,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "4");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "4");
                         System.out.println("4");
                     }
 
@@ -113,7 +110,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "5");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "5");
                         System.out.println("5");
                     }
 
@@ -129,7 +126,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "6");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "6");
                         System.out.println("6");
                     }
 
@@ -145,7 +142,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "7");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "7");
                         System.out.println("7");
                     }
 
@@ -161,7 +158,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "8");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "8");
                         System.out.println("8");
                     }
 
@@ -177,7 +174,7 @@ public class SzamologepActor extends Group {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        if(!(display.getText().length()>=8 || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "9");
+                        if(!(display.getText().length()>= maxHosz || display.getText().toString().equals(rosz) || display.getText().toString().equals(jo) || display.getText().toString().equals(kepletString().toString()))) display.setText(display.getText() + "9");
                         System.out.println("9");
                     }
 
