@@ -7,8 +7,8 @@ import hu.tokingame.elso.MyGdxGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.width = 1280;
-		config.height = 720;
+		config.width = MyGdxGame.WORLD_WIDTH;
+		config.height = MyGdxGame.WORLD_HEIGHT;
 		new LwjglApplication(new MyGdxGame(), config);
 	}
 }
